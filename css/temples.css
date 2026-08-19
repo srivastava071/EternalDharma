@@ -1,0 +1,40 @@
+/* Layout */
+body { font-family: Poppins, sans-serif; margin:0; background: linear-gradient(180deg,#fffdf5,#fff8e3); color:#2c1a04;}
+.page-header { padding: 18px 28px; display:flex; gap:20px; align-items:center; border-bottom:1px solid rgba(0,0,0,0.06);}
+.page-header h1 { font-size:1.25rem; margin:0; color:#1e3f7c; }
+.logo-link { color:#d17f05; text-decoration:none; font-weight:600; }
+
+/* Main split layout */
+.tmpl-main { display:flex; gap:20px; padding: 20px; height: calc(100vh - 78px); box-sizing:border-box; }
+.tmpl-left { width:320px; background: #fff; border-radius:12px; padding:16px; box-shadow:0 6px 18px rgba(0,0,0,0.06); overflow:auto; }
+.tmpl-map-wrap { flex:1; border-radius:12px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,0.08); }
+
+/* Map */
+#map { width:100%; height:100%; min-height:520px; }
+
+/* Filters & Search */
+.tmpl-left label { display:block; margin-top:10px; font-weight:600; color:#6a4b2b; }
+#stateFilter, #searchBox { width:100%; padding:10px 12px; margin-top:6px; border-radius:8px; border:1px solid rgba(210,160,80,0.3); font-size:0.95rem; box-shadow:inset 0 1px 0 rgba(255,255,255,0.6); }
+
+/* Temple list */
+.temple-list { margin-top:12px; }
+.temple-item { display:flex; gap:12px; padding:10px; border-radius:8px; align-items:center; cursor:pointer; transition:all .18s ease; border:1px solid rgba(0,0,0,0.03); }
+.temple-item:hover { transform:translateY(-4px); box-shadow:0 10px 22px rgba(0,0,0,0.06); background: linear-gradient(90deg,#fffafd,#fff8e7); }
+.temple-thumb { width:64px; height:48px; object-fit:cover; border-radius:6px; flex-shrink:0; border:1px solid rgba(0,0,0,0.05); }
+.temple-meta { flex:1; }
+.temple-meta h4 { margin:0; font-size:1rem; color:#1e3f7c; }
+.temple-meta p { margin:4px 0 0; font-size:0.9rem; color:#6a4b2b; }
+
+/* Modal */
+.tmpl-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.45); z-index:9999; }
+.tmpl-modal[aria-hidden="false"]{ display:flex; }
+.tmpl-modal-content { background:#fff; width:92%; max-width:780px; padding:22px; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.3); position:relative; }
+.tmpl-close { position:absolute; top:12px; right:12px; background:#f1a208; color:#fff; border:none; padding:8px 10px; border-radius:8px; cursor:pointer; font-weight:700; }
+.tmpl-close:hover { background:#ffcc33; color:#2e1a06; }
+
+/* Responsive */
+@media (max-width:900px){
+  .tmpl-main { flex-direction:column; height:auto; padding:12px; }
+  .tmpl-left { width:100%; order:2; }
+  .tmpl-map-wrap { order:1; min-height:420px; }
+}

@@ -1,0 +1,794 @@
+/* ==========================================================================
+   ETERNAL DHARMA - RESPONSIVE SYSTEM (LUXURY EDITORIAL SANCTUARY)
+   Optimized for 360px - 480px Mobile, Tablets, and 1440px+ Desktops
+   ========================================================================== */
+
+/* --- 1. TABLET BREAKPOINT (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-title {
+    font-size: 2.375rem;
+  }
+
+  .inquiry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .practice-dashboard-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 32px 24px;
+  }
+
+  .scriptures-grid,
+  .stories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .pilgrimage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .philosophy-stage-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .stage-visual {
+    order: -1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .stage-title {
+    justify-content: center;
+  }
+
+  .stage-sanskrit-quote {
+    text-align: center;
+    border-left: none;
+    border-top: 3px solid var(--accent-gold);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  }
+
+  .results-grid-display {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- 2. MOBILE VIEWPORT (max-width: 900px) --- */
+@media (max-width: 900px) {
+  /* Floating Navbar */
+  .navbar {
+    width: calc(100% - 20px) !important;
+    top: 10px !important;
+  }
+
+  .nav-container {
+    height: 48px !important;
+    padding: 0 10px 0 12px !important;
+    gap: 8px !important;
+  }
+
+  .brand-logo {
+    gap: 8px !important;
+  }
+
+  .brand-title {
+    font-size: 0.9375rem !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .navbar .nav-menu,
+  .navbar .nav-cmd-trigger,
+  .navbar .nav-cta-btn,
+  #btnOpenAccount.nav-cta-btn,
+  .user-session-wrapper {
+    display: none !important;
+  }
+
+  .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .btn-atmosphere-toggle {
+    width: 32px !important;
+    height: 32px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex !important;
+    width: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Section Spacing & Headers */
+  .section-header {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .section-tag {
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    line-height: 1.28;
+    margin-bottom: 8px;
+  }
+
+  .section-subtitle {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    padding: 0 4px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    min-height: auto !important;
+    display: block !important;
+    padding: 98px 0 36px !important;
+  }
+
+  .hero-container {
+    padding: 0 14px !important;
+  }
+
+  .hero-badge-row {
+    margin-bottom: 12px !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-badge {
+    padding: 4px 12px !important;
+    font-size: 0.6875rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-title {
+    font-size: 1.875rem;
+    line-height: 1.22;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+
+  .hero-cta-wrapper {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .hero-cta-btn,
+  .hero-cta-wrapper .btn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 0.875rem;
+    justify-content: center;
+  }
+
+  .hero-quote-box {
+    padding: 12px 14px;
+    margin-top: 14px;
+  }
+
+  .hero-quote-text {
+    font-size: 0.8125rem;
+  }
+
+  /* Hero Sanctuary Deck (De-cluttered on Mobile) */
+  .hero-sanctuary-deck {
+    padding: 18px 14px;
+    margin-top: 18px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .sanctuary-deck-header {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+  }
+
+  .dilemma-chips-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .dilemma-chip {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+
+  .sanctuary-deck-body {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sadhana-verse-mirror {
+    padding: 14px 12px;
+  }
+
+  .verse-sanskrit-preview {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .verse-trans-preview {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  /* Hide duplicate progress track in hero on mobile - it lives in #practice */
+  .hero-progress-stack {
+    display: none;
+  }
+
+  .hero-audio-widget {
+    padding: 8px 12px;
+    margin-top: 4px;
+  }
+
+  .sanctuary-deck-footer {
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  /* Inquiry Cards */
+  .inquiry-section {
+    margin-top: 0;
+    padding: 16px 0 28px;
+  }
+
+  .inquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .inquiry-card {
+    padding: 16px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .inquiry-icon {
+    font-size: 1.375rem;
+    margin-bottom: 6px;
+  }
+
+  .inquiry-state {
+    font-size: 0.6875rem;
+    margin-bottom: 4px;
+  }
+
+  .inquiry-prompt {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .inquiry-verse-ref {
+    font-size: 0.75rem;
+  }
+
+  /* Discovery & Search Hub */
+  .discovery-section {
+    padding: 32px 0;
+  }
+
+  .discovery-search-card {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .search-input-group {
+    padding: 4px 6px 4px 14px;
+  }
+
+  .search-shortcut-pill {
+    display: none;
+  }
+
+  .search-field {
+    font-size: 0.875rem;
+  }
+
+  .search-action-btn {
+    padding: 7px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .suggested-tags-row {
+    margin-top: 14px;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  .suggested-label {
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+  }
+
+  .suggestion-chip {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .results-grid-display {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Gita Oracle */
+  .oracle-section {
+    padding: 32px 0;
+  }
+
+  .oracle-card {
+    padding: 22px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .oracle-heading-area {
+    margin-bottom: 18px;
+  }
+
+  .oracle-title {
+    font-size: 1.375rem;
+  }
+
+  .oracle-quick-chips {
+    gap: 6px;
+    margin-bottom: 18px;
+    justify-content: center;
+  }
+
+  .oracle-chip {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .oracle-input-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: var(--radius-md);
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .oracle-submit-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .oracle-revelation-card {
+    padding: 18px 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .oracle-sanskrit {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+
+  .oracle-translation {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .oracle-actionable-box {
+    padding: 10px 12px;
+    margin-bottom: 16px;
+  }
+
+  .oracle-action-heading {
+    font-size: 0.6875rem;
+  }
+
+  .oracle-action-text {
+    font-size: 0.75rem;
+  }
+
+  .oracle-card-footer {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .oracle-card-footer .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 14px;
+  }
+
+  /* Practice Hub & Dincharya Clock */
+  .practice-dashboard-section {
+    padding: 32px 0;
+  }
+
+  .practice-dashboard-card {
+    padding: 22px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .dashboard-title {
+    font-size: 1.375rem;
+  }
+
+  .streak-metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .metric-box {
+    padding: 8px 4px;
+  }
+
+  .metric-val {
+    font-size: 1.125rem;
+  }
+
+  .metric-label {
+    font-size: 0.625rem;
+  }
+
+  .dashboard-side-panel {
+    padding: 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .dincharya-widget-box {
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+
+  .dincharya-phase-title {
+    font-size: 0.875rem;
+  }
+
+  .dincharya-phase-desc {
+    font-size: 0.75rem;
+  }
+
+  .dincharya-track-bars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .dincharya-pill {
+    flex: 1 1 28%;
+    font-size: 0.5625rem;
+    padding: 3px 0;
+  }
+
+  /* Core Philosophy Section */
+  .philosophy-section {
+    padding: 32px 0;
+  }
+
+  .philosophy-tabs-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .philosophy-tab-btn {
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 0.8125rem;
+  }
+
+  .philosophy-stage-card {
+    padding: 20px 14px;
+    border-radius: var(--radius-lg);
+    gap: 18px;
+  }
+
+  .stage-image-frame {
+    width: 170px;
+    height: 170px;
+    padding: 6px;
+    margin: 0 auto;
+  }
+
+  .stage-title {
+    font-size: 1.375rem;
+  }
+
+  .stage-title-hindi {
+    font-size: 1.25rem;
+  }
+
+  .stage-sanskrit-quote {
+    font-size: 0.875rem;
+    padding: 10px 12px;
+  }
+
+  .stage-explanation {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .stage-action-box .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Scriptures, Pilgrimage, Stories Grids */
+  .scriptures-section,
+  .pilgrimage-section,
+  .stories-section {
+    padding: 32px 0;
+  }
+
+  .scriptures-grid,
+  .stories-grid,
+  .pilgrimage-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .scripture-card,
+  .story-card,
+  .pilgrimage-card {
+    border-radius: var(--radius-md);
+  }
+
+  .scripture-media,
+  .story-thumb-frame,
+  .pilgrimage-thumb-box {
+    height: 160px;
+  }
+
+  .scripture-body,
+  .story-card,
+  .pilgrimage-body {
+    padding: 16px 14px;
+  }
+
+  .scripture-title,
+  .story-card-title,
+  .pilgrimage-title {
+    font-size: 1.0625rem;
+  }
+
+  .scripture-desc,
+  .story-card-desc,
+  .pilgrimage-desc {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  /* Shloka & Stillness Sanctuary */
+  .shloka-section {
+    padding: 44px 0;
+  }
+
+  .shloka-card {
+    padding: 24px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .shloka-sanskrit {
+    font-size: 1.1875rem;
+    line-height: 1.6;
+  }
+
+  .shloka-translation {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .shloka-reflection-box {
+    padding: 12px 14px;
+    margin: 16px 0;
+  }
+
+  .shloka-reflection-text {
+    font-size: 0.8125rem;
+  }
+
+  .shloka-actions-bar {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .shloka-action-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 14px;
+    font-size: 0.8125rem;
+  }
+
+  .mindful-breath-sanctuary {
+    margin-top: 32px;
+    padding: 24px 14px;
+    border-radius: var(--radius-lg);
+  }
+
+  .breath-title {
+    font-size: 1.1875rem;
+  }
+
+  .breath-desc {
+    font-size: 0.8125rem;
+    margin-bottom: 20px;
+  }
+
+  .breath-lotus-wrapper {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .breath-orb {
+    width: 84px;
+    height: 84px;
+  }
+
+  .breath-text {
+    font-size: 0.75rem;
+  }
+
+  /* Final CTA & Footer */
+  .final-cta-section {
+    padding: 44px 0 60px;
+  }
+
+  .final-cta-card {
+    padding: 30px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .final-cta-title {
+    font-size: 1.5rem;
+  }
+
+  .final-cta-subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  /* Floating Audio Dock */
+  .floating-audio-dock {
+    width: calc(100% - 20px);
+    bottom: 10px;
+    padding: 8px 12px;
+    border-radius: var(--radius-pill);
+    gap: 8px;
+  }
+
+  .dock-track-info {
+    max-width: 130px;
+  }
+
+  .dock-title {
+    font-size: 0.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dock-subtitle {
+    font-size: 0.625rem;
+  }
+
+  /* Modals */
+  .command-palette-modal {
+    padding: 16px 10px;
+  }
+
+  .command-palette-box {
+    margin-top: 30px;
+    border-radius: var(--radius-md);
+  }
+
+  .account-card-modal,
+  .candidate-card-modal {
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+  }
+
+  /* Dark Theme Mobile Drawer */
+  body.theme-sandhya .mobile-nav-drawer {
+    background: rgba(21, 17, 24, 0.96);
+    border-color: rgba(248, 177, 121, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  }
+
+  body.theme-sandhya .mobile-nav-link {
+    color: #D6C8B8;
+  }
+
+  body.theme-sandhya .mobile-nav-link:hover {
+    color: var(--accent-saffron);
+    background-color: rgba(217, 93, 30, 0.15);
+  }
+
+  body.theme-sandhya .mobile-menu-toggle {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(248, 177, 121, 0.25);
+  }
+
+  body.theme-sandhya .mobile-menu-toggle span {
+    background-color: #FFFFFF;
+  }
+}
+
+/* --- 3. COMPACT MOBILE VIEWPORT (max-width: 480px) --- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hero-title {
+    font-size: 1.6875rem;
+  }
+
+  .section-title {
+    font-size: 1.375rem;
+  }
+
+  .streak-metrics-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .stage-image-frame {
+    width: 155px;
+    height: 155px;
+  }
+}
+
+/* --- 4. LARGE DESKTOP (min-width: 1440px) --- */
+@media (min-width: 1440px) {
+  :root {
+    --container-width: 1240px;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+  }
+}

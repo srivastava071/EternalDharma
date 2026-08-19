@@ -1,0 +1,244 @@
+/* 🌼 GENERAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fffaf0;
+  color: #2e1a06;
+  overflow-x: hidden;
+}
+
+/* 🔱 NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #f2a03d, #e67e22);
+  padding: 10px 60px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 60px;
+  margin-right: 1px;
+  margin-left: -40px;
+}
+
+.navbar h1 {
+  color: #fff;
+  font-weight: 450;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #2e1a06;
+}
+
+/* 🌸 ABOUT SECTION */
+.about-section {
+  background: #fffaf0;
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.about-section h1 {
+  color: #b05e0d;
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.about-section .quote {
+  font-style: italic;
+  color: #7a4f10;
+  margin: 10px auto 35px;
+  max-width: 700px;
+  border-left: 4px solid #f1a208;
+  padding-left: 15px;
+}
+
+/* 🌿 About Content */
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  line-height: 1.8;
+}
+
+.about-content p {
+  color: #4b280a;
+  margin-bottom: 1.2rem;
+}
+
+/* 👤 CREATOR SECTION */
+.creator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  background: #fff3e0;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 1rem;
+  border: 3px solid #f1a208;
+  box-shadow: 0 0 15px rgba(255, 204, 51, 0.4);
+  object-fit: cover;
+}
+
+.creator-info {
+  max-width: 500px;
+  text-align: left;
+  padding: 10px;
+}
+
+.creator-info h2 {
+  color: #b05e0d;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.creator-info p {
+  color: #4b280a;
+  line-height: 1.7;
+}
+
+.creator-info blockquote {
+  font-style: italic;
+  color: #7a4f10;
+  border-left: 3px solid #f1a208;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+/* 🌸 JOURNEY AHEAD (optional if added later) */
+.journey-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.journey-section h2 {
+  color: #b05e0d;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.journey-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.journey-card {
+  background: #fff;
+  border-radius: 12px;
+  width: 260px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.journey-card:hover {
+  transform: translateY(-8px);
+}
+
+.journey-card h3 {
+  color: #d17f05;
+  margin-bottom: 10px;
+}
+
+/* 🌺 FOOTER */
+.footer {
+  background: linear-gradient(90deg, #f1a208, #d17f05);
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-weight: 500;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer .mantra {
+  color: #fffbea;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .creator {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .creator-info {
+    text-align: center;
+  }
+
+  .about-content {
+    padding: 1.5rem;
+  }
+
+  .about-section h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Make logo text clickable */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-link h1 {
+  color: #fff;
+  font-weight: 450;
+  letter-spacing: 1px;
+  font-size: 30px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for "Eternal Dharma" text */
+.logo-link:hover h1 {
+  color: #2e1a06;
+}

@@ -1,0 +1,943 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffaf0;
+  color: #2e1a06;
+  display: block; /* ✅ changed from flex to block */
+}
+
+
+/* 🌼 SIDEBAR */
+.side-nav {
+  width: 250px;
+  background: linear-gradient(180deg, #f1a208, #d17f05);
+  color: white;
+  position: fixed;
+  margin-top: -30px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 30px 20px;
+  overflow-y: auto;
+}
+
+.side-nav h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.side-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-nav li {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.side-nav li:hover,
+.side-nav li.active {
+  background: #fff3c2;
+  color: #2e1a06;
+  font-weight: 600;
+}
+
+
+
+
+/* 🌸 MAIN CONTENT AREA */
+.content-area {
+  margin-top: -10px;
+  margin-left: 270px;
+  padding: 80px 100px;
+  flex: 1;
+  background: linear-gradient(180deg, #fff9f0, #fff3e0);
+  min-height: 100vh;
+  overflow-y: auto;
+  box-shadow: inset 0 0 60px rgba(240, 180, 60, 0.1);
+}
+
+/* 🕉️ CONTENT CONTAINER STYLING */
+.chapter {
+  display: none;
+  animation: fadeIn 0.6s ease;
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08),
+              0 0 40px rgba(255, 190, 60, 0.12);
+  border: 1px solid rgba(255, 185, 60, 0.3);
+  max-width: 900px;
+  margin: auto;
+}
+
+.chapter.active {
+  display: block;
+}
+
+/* 🌿 HEADINGS */
+.chapter h2 {
+  color: #b25e07;
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 200, 80, 0.5);
+  letter-spacing: 0.8px;
+}
+
+.chapter h3 {
+  color: #d67a09;
+  font-size: 1.4rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-left: 4px solid #f1a208;
+  padding-left: 10px;
+}
+
+/* 🌼 TEXT STYLING */
+.chapter p {
+  color: #3b2405;
+  font-size: 1.12rem;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+
+.chapter p:first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #d47f05;
+}
+
+/* 📜 BLOCKQUOTE STYLING */
+blockquote {
+  background: linear-gradient(90deg, #fff7d1, #ffefb8);
+  padding: 20px 30px;
+  border-left: 6px solid #f1a208;
+  font-style: italic;
+  margin: 25px 0;
+  border-radius: 15px;
+  color: #5a3b10;
+  font-size: 1.05rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+blockquote:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+
+/* 🪷 SECTION DIVIDERS */
+.chapter h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #f1a208, #ffcc33);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* 🌞 SCROLL EFFECT (when reading long chapters) */
+.content-area::-webkit-scrollbar {
+  width: 10px;
+}
+.content-area::-webkit-scrollbar-track {
+  background: #fff4dc;
+  border-radius: 10px;
+}
+.content-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f1a208, #d17f05);
+  border-radius: 10px;
+}
+
+/* 🔘 NAV BUTTONS */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+button {
+  background: linear-gradient(90deg, #f1a208, #d17f05);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #ffcc33, #f1a208);
+  color: #2e1a06;
+  box-shadow: 0 0 18px rgba(255, 180, 60, 0.6);
+  transform: translateY(-2px);
+}
+
+/* 🌸 ANIMATION */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .content-area {
+    margin-left: 0;
+    padding: 40px 20px;
+  }
+
+  .chapter {
+    padding: 40px 25px;
+  }
+
+  .chapter h2 {
+    font-size: 1.8rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+.intro-quote {
+  font-style: italic;
+  text-align: center;
+  background: linear-gradient(90deg, #fff7d1, #ffefb8);
+  padding: 18px 25px;
+  border-left: 5px solid #f1a208;
+  border-radius: 15px;
+  margin: 25px 0 35px;
+  font-size: 1.15rem;
+  color: #5a3b10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+ul.birth-list, ul.essence-list {
+  list-style: none;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+ul.birth-list li, ul.essence-list li {
+  padding: 8px 0;
+  color: #3b2405;
+  font-size: 1.08rem;
+}
+
+.essence-quote {
+  background: linear-gradient(90deg, #fff6d0, #ffe8a6);
+  text-align: center;
+  font-size: 1.15rem;
+  font-style: italic;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.chapter ul.essence-list {
+  list-style: none;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.chapter ul.essence-list li {
+  font-size: 1.08rem;
+  color: #3b2405;
+  padding: 6px 0;
+}
+
+.chapter blockquote {
+  background: linear-gradient(90deg, #fff8d9, #ffefb6);
+  border-left: 5px solid #f1a208;
+  font-style: italic;
+  margin: 20px 0;
+  padding: 18px 25px;
+  border-radius: 12px;
+  color: #5a3b10;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.chapter h3 {
+  color: #c47207;
+  font-size: 1.4rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-left: 4px solid #f1a208;
+  padding-left: 10px;
+}
+
+.chapter blockquote {
+  background: linear-gradient(90deg, #fff8d8, #ffefb8);
+  border-left: 6px solid #f1a208;
+  font-style: italic;
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 15px;
+  color: #5a3b10;
+  font-size: 1.05rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chapter .essence-list {
+  list-style: none;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.chapter .essence-list li {
+  color: #3b2405;
+  font-size: 1.08rem;
+  padding: 6px 0;
+}
+
+.chapter .essence-quote {
+  background: linear-gradient(90deg, #fff6d0, #ffe8a6);
+  text-align: center;
+  font-size: 1.15rem;
+  font-style: italic;
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 🐒 Kishkindha Kanda special glow */
+#kishkindha h2 {
+  color: #b35400;
+  text-shadow: 0 0 10px rgba(255, 136, 0, 0.3);
+}
+
+#kishkindha blockquote {
+  background: linear-gradient(90deg, #fff8e2, #ffe7b2);
+  border-left: 6px solid #f4a300;
+  font-style: italic;
+  margin: 25px 0;
+  padding: 22px 28px;
+  border-radius: 15px;
+  color: #5a360a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#kishkindha .essence-list li {
+  font-size: 1.08rem;
+  color: #3b2405;
+  padding: 7px 0;
+}
+
+#kishkindha .essence-quote {
+  background: linear-gradient(90deg, #fff5c8, #ffe28a);
+  text-align: center;
+  padding: 25px;
+  border-radius: 18px;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #4a2b00;
+  margin-top: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+#kishkindha .intro-quote {
+  font-size: 1.1rem;
+  color: #704a00;
+  text-align: center;
+  background: #fff8e0;
+  border-left: 5px solid #f2a200;
+  border-right: 5px solid #f2a200;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 800px;
+  border-radius: 15px;
+  font-style: italic;
+}
+
+/* 🌺 Sundara Kanda Styling */
+#sundara h2 {
+  color: #cc5a00;
+  text-shadow: 0 0 12px rgba(255, 170, 0, 0.3);
+}
+
+#sundara blockquote {
+  background: linear-gradient(90deg, #fff7e1, #ffedb5);
+  border-left: 6px solid #f5a300;
+  font-style: italic;
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 15px;
+  color: #5a360a;
+  font-size: 1.05rem;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+#sundara .intro-quote {
+  background: #fff9e8;
+  border-left: 5px solid #f1a208;
+  border-right: 5px solid #f1a208;
+  font-style: italic;
+  text-align: center;
+  padding: 18px 20px;
+  margin: 25px auto;
+  max-width: 800px;
+  border-radius: 15px;
+  color: #6a4200;
+}
+
+#sundara .essence-list {
+  list-style: none;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+#sundara .essence-list li {
+  color: #3b2405;
+  font-size: 1.08rem;
+  padding: 7px 0;
+}
+
+#sundara .essence-quote {
+  background: linear-gradient(90deg, #fff6c8, #ffe28a);
+  text-align: center;
+  font-size: 1.15rem;
+  font-style: italic;
+  padding: 25px;
+  border-radius: 18px;
+  color: #4a2b00;
+  margin-top: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ⚔️ Yuddha Kanda Styling */
+#yuddha h2 {
+  color: #b14000;
+  text-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+}
+
+#yuddha blockquote {
+  background: linear-gradient(90deg, #fff5d4, #ffeaa3);
+  border-left: 6px solid #f2a208;
+  font-style: italic;
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 15px;
+  color: #4b2e00;
+  font-size: 1.05rem;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+}
+
+#yuddha .intro-quote {
+  background: #fff7e0;
+  border-left: 5px solid #f2a208;
+  border-right: 5px solid #f2a208;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 850px;
+  border-radius: 15px;
+  color: #5a3705;
+}
+
+#yuddha .essence-list {
+  list-style: none;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+#yuddha .essence-list li {
+  color: #3b2405;
+  font-size: 1.08rem;
+  padding: 7px 0;
+}
+
+#yuddha .essence-quote {
+  background: linear-gradient(90deg, #fff4c8, #ffe28a);
+  text-align: center;
+  font-size: 1.15rem;
+  font-style: italic;
+  padding: 25px;
+  border-radius: 18px;
+  color: #4a2b00;
+  margin-top: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* 👑 Uttara Kanda Styling */
+#uttara h2 {
+  color: #a85c00;
+  text-shadow: 0 0 15px rgba(255, 185, 50, 0.4);
+}
+
+#uttara blockquote {
+  background: linear-gradient(90deg, #fffaf0, #fff1c8);
+  border-left: 6px solid #f4b400;
+  font-style: italic;
+  padding: 20px 25px;
+  margin: 25px 0;
+  border-radius: 15px;
+  color: #503100;
+  font-size: 1.05rem;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.06);
+}
+
+#uttara .intro-quote {
+  background: #fffbea;
+  border-left: 5px solid #f2b308;
+  border-right: 5px solid #f2b308;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+  margin: 25px auto;
+  max-width: 850px;
+  border-radius: 15px;
+  color: #704a00;
+}
+
+#uttara .essence-list {
+  list-style: none;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+#uttara .essence-list li {
+  color: #3b2405;
+  font-size: 1.08rem;
+  padding: 7px 0;
+}
+
+#uttara .essence-quote {
+  background: linear-gradient(90deg, #fff6c8, #ffe9a2);
+  text-align: center;
+  font-size: 1.15rem;
+  font-style: italic;
+  padding: 25px;
+  border-radius: 18px;
+  color: #4a2b00;
+  margin-top: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+#uttara .eternal-quote {
+  background: linear-gradient(90deg, #fffdf0, #fff5d8);
+  text-align: center;
+  font-size: 1.1rem;
+  font-style: italic;
+  padding: 25px;
+  border-radius: 18px;
+  color: #5c3d00;
+  margin-top: 40px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 🌟 Key Characters Section */
+#characters h2 {
+  color: #a75a00;
+  text-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.character-card {
+  background: #fffaf2;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.character-card h3 {
+  color: #b56200;
+  margin-bottom: 12px;
+}
+
+.character-card blockquote {
+  background: #fff3d4;
+  border-left: 5px solid #f0a500;
+  padding: 12px 20px;
+  font-style: italic;
+  border-radius: 8px;
+  margin: 15px 0;
+  color: #4e2f00;
+}
+
+.character-card p {
+  color: #3b2405;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* 📜 Table Styling */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
+.character-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf8;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.character-table th,
+.character-table td {
+  padding: 14px;
+  border-bottom: 1px solid #f2d6a0;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.character-table th {
+  background: #fce8b5;
+  color: #5a3700;
+}
+
+.character-table tr:hover {
+  background: #fff7e3;
+}
+
+/* Essence Quote */
+#characters .essence-quote {
+  background: linear-gradient(90deg, #fff6c8, #ffe9a2);
+  text-align: center;
+  font-size: 1.15rem;
+  font-style: italic;
+  padding: 25px;
+  border-radius: 18px;
+  color: #4a2b00;
+  margin-top: 35px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* 🪔 Moral Essence Section */
+#moral h2 {
+  color: #a75a00;
+  text-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+  margin-bottom: 10px;
+}
+
+#moral .intro-quote {
+  background: #fff9e8;
+  border-left: 5px solid #f4b400;
+  font-style: italic;
+  text-align: center;
+  padding: 18px;
+  margin: 25px auto;
+  border-radius: 15px;
+  color: #704a00;
+  max-width: 850px;
+}
+
+#moral .lesson {
+  background: #fffaf3;
+  border-left: 5px solid #f8c05c;
+  margin: 25px 0;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+#moral .lesson:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+#moral h3 {
+  color: #b56200;
+  margin-bottom: 12px;
+}
+
+#moral blockquote {
+  background: #fff3d4;
+  border-left: 5px solid #f0a500;
+  font-style: italic;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 18px 0;
+  color: #4e2f00;
+}
+
+#moral .lesson-note {
+  font-weight: 600;
+  color: #5a3700;
+  background: #fff8e1;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+#moral .final-message {
+  background: linear-gradient(90deg, #fff8d6, #ffe9b3);
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 40px;
+  color: #4a2b00;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+#moral .final-message blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+/* 🪔 Conclusion Section */
+.conclusion {
+  background: linear-gradient(180deg, #fffaf3, #fff3d1);
+  padding: 60px 25px;
+  border-radius: 25px;
+  margin-top: 40px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.conclusion h2 {
+  color: #a15a00;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+}
+
+.conclusion .intro-quote {
+  background: #fff9e0;
+  border-left: 6px solid #f4b400;
+  padding: 20px;
+  font-style: italic;
+  border-radius: 15px;
+  text-align: center;
+  color: #624100;
+  margin: 25px auto;
+  max-width: 850px;
+}
+
+.conclusion .reflection {
+  margin: 30px 0;
+  background: #fffef9;
+  padding: 25px;
+  border-radius: 15px;
+  border-left: 5px solid #f0b46c;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.conclusion .reflection:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.conclusion h3 {
+  color: #b56a00;
+  margin-bottom: 12px;
+}
+
+.conclusion blockquote {
+  background: #fff4d1;
+  border-left: 5px solid #f0a500;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #4d2a00;
+  margin: 18px 0;
+  font-style: italic;
+}
+
+.final-blessing {
+  background: linear-gradient(90deg, #fff6c8, #ffe7a5);
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  margin: 40px 0 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  color: #4a2b00;
+}
+
+.final-blessing h3 {
+  color: #a75a00;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.eternal-reflection {
+  background: #fff6da;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #4a2b00;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.eternal-reflection blockquote {
+  font-style: italic;
+  margin: 0;
+}
+
+/* 🔁 Restart Button */
+.restart-btn {
+  background: #f4b400;
+  color: white;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.restart-btn:hover {
+  background: #d69400;
+  transform: scale(1.05);
+}
+
+/* 🌺 Simple Horizontal Header */
+.header {
+  background-color: #fff7e6;   /* light saffron */
+  padding: 12px 0;
+  text-align: center;
+  border-bottom: 2px solid #f4b400;
+}
+header.header {
+  margin-bottom: 10px; /* reduce space below navbar */
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  gap: 25px;
+}
+
+.header nav ul li {
+  display: inline;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #704a00;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+  color: #d18900;
+}
+
+/* 🌙 Simple Horizontal Footer */
+.footer {
+  background-color: #fff7e6;
+  text-align: center;
+  padding: 15px 0;
+  border-top: 2px solid #f4b400;
+  font-size: 0.95rem;
+  color: #5a3700;
+  font-weight: 500;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* 🌅 Fade-in on page load */
+body {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+/* 🌟 PREMIUM ROUND TOGGLE BUTTON */
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(255, 200, 60, 0.45);
+  transition: 0.3s ease;
+  z-index: 900;
+}
+
+/* Hover glow */
+.sidebar-toggle:hover {
+  box-shadow: 0 0 25px rgba(255, 210, 90, 0.8);
+}
+
+/* 3 hamburger lines */
+.sidebar-toggle span {
+  position: absolute;
+  width: 22px;
+  height: 3px;
+  background: rgb(70, 69, 69);
+  border-radius: 5px;
+  transition: 0.35s ease;
+}
+
+/* Top line */
+.sidebar-toggle span:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+/* Middle line */
+.sidebar-toggle span:nth-child(2) {
+  opacity: 1;
+}
+
+/* Bottom line */
+.sidebar-toggle span:nth-child(3) {
+  transform: translateY(7px);
+}
+
+/* ✖ ACTIVE STATE — Animated hamburger → X */
+.sidebar-toggle.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.sidebar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* Sidebar collapsed */
+.side-nav.collapsed {
+  transform: translateX(-110%);
+  transition: 0.4s ease;
+}
+
+
+

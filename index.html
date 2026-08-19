@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EternalDharma — Ancient Wisdom for the Modern Soul</title>
+  <meta name="description" content="A digital sanctuary to explore Sanatan Dharma's sacred scriptures, timeless philosophy, divine audio stories, and daily reflection habits." />
+  
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="EternalDharma — In a noisy world, find eternal truth." />
+  <meta property="og:description" content="Explore scriptures, stories, teachings, and timeless wisdom through a modern digital experience built for curiosity and reflection." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Editorial Serif + Modern Clean Sans + Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheets (with cache buster) -->
+  <link rel="stylesheet" href="css/style.css?v=10.0" />
+  <link rel="stylesheet" href="css/responsive.css?v=10.0" />
+</head>
+<body>
+
+  <!-- 🕉️ TOP NAVIGATION -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="EternalDharma Homepage">
+        <svg class="brand-emblem-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="dharmaGoldGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FCD34D" />
+              <stop offset="50%" stop-color="#F59E0B" />
+              <stop offset="100%" stop-color="#D95D1E" />
+            </linearGradient>
+            <filter id="sacredGlowNav" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="1.5" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <circle cx="24" cy="24" r="21" stroke="url(#dharmaGoldGradNav)" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
+          <circle cx="24" cy="24" r="16" stroke="url(#dharmaGoldGradNav)" stroke-width="1.4" />
+          <path d="M24 8 L24 40 M8 24 L40 24 M12.7 12.7 L35.3 35.3 M12.7 35.3 L35.3 12.7" stroke="url(#dharmaGoldGradNav)" stroke-width="1.2" stroke-linecap="round" opacity="0.65" />
+          <path d="M24 13 C21.5 17 19 20.5 19 24.5 C19 27.5 21.2 30 24 30 C26.8 30 29 27.5 29 24.5 C29 20.5 26.5 17 24 13 Z" fill="url(#dharmaGoldGradNav)" filter="url(#sacredGlowNav)" />
+          <circle cx="24" cy="24.5" r="2.2" fill="#FFFDF0" />
+        </svg>
+        <span class="brand-title">EternalDharma</span>
+      </a>
+
+      <nav aria-label="Primary Navigation" class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#discovery" class="nav-link">Explore</a></li>
+          <li><a href="#philosophy" class="nav-link">Philosophy</a></li>
+          <li><a href="#scriptures" class="nav-link">Scriptures</a></li>
+          <li><a href="#stories" class="nav-link">Stories</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Atmospheric Mode Switcher (Suryodaya Dawn / Sandhya Night) -->
+        <button class="btn-atmosphere-toggle" id="btnAtmosphereToggle" title="Toggle Atmosphere (Suryodaya Dawn / Sandhya Night)" aria-label="Toggle Atmosphere Mode">
+          <span class="atmosphere-icon-wrap" id="atmosphereIcon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="atmosphere-svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Spotlight ⌘K Trigger -->
+        <button class="nav-cmd-trigger" aria-label="Open Command Palette Search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search</span>
+          <span class="kbd-badge">⌘K</span>
+        </button>
+
+        <!-- Dynamic User Session & Logout Widget -->
+        <div class="user-session-wrapper" id="userSessionWrapper" style="display: none;">
+          <button class="user-profile-badge" id="userProfileBadge" title="Click to view your Sadhana Gamified Profile">
+            <span class="user-badge-flame">🔥</span>
+            <span class="user-badge-name" id="userBadgeName">Seeker</span>
+            <span class="user-badge-lvl" id="userBadgeLvl">Lvl 1</span>
+          </button>
+          <button class="btn-nav-logout" id="btnNavLogout" title="Switch Seeker / Sign Out" aria-label="Sign Out">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span>Exit</span>
+          </button>
+        </div>
+
+        <button class="btn btn-primary btn-sm nav-cta-btn" id="btnOpenAccount">Start Practice &rarr;</button>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#inquiry" class="mobile-nav-link">Seek Guidance by Dilemma</a></li>
+        <li><a href="#discovery" class="mobile-nav-link">Discover Wisdom (⌘K)</a></li>
+        <li><a href="#practice" class="mobile-nav-link">Daily Practice Hub</a></li>
+        <li><a href="#philosophy" class="mobile-nav-link">Core Philosophy</a></li>
+        <li><a href="#scriptures" class="mobile-nav-link">Sacred Scriptures</a></li>
+        <li><a href="#daily-wisdom" class="mobile-nav-link">Daily Shloka & Reflection</a></li>
+        <li><a href="#stories" class="mobile-nav-link">Divine Audio Stories</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About EternalDharma</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- 🌄 EMOTIONAL HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <!-- Background Ambient Video -->
+      <video autoplay muted loop playsinline class="hero-video-bg" poster="images/pexels-felix-mittermeier-956981.jpg">
+        <source src="Sacred_Himalayan_Sunrise_Video_Generation.mp4" type="video/mp4" />
+      </video>
+      <canvas id="heroPranaCanvas"></canvas>
+      <div class="hero-gradient-overlay"></div>
+
+      <div class="container hero-container">
+        <div class="hero-badge-row">
+          <span class="pill-badge hero-badge">
+            <!-- Ancient Sacred Pranava (Om) Motif -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7.74 3.65c-.8.15-1.57.54-2.18 1.1-.9.84-1.39 2.04-1.39 3.25 0 2.21 1.48 4.14 3.56 4.67-.32.48-.53 1.05-.53 1.68 0 1.63 1.25 3 2.88 3.12v.03c-2.3.26-4.08 2.2-4.08 4.5 0 2.48 2.02 4.5 4.5 4.5 2.14 0 3.93-1.5 4.38-3.5h-1.85c-.38 1-1.35 1.7-2.53 1.7-1.49 0-2.7-1.21-2.7-2.7 0-1.42 1.1-2.58 2.5-2.68v-.02c.07 0 .13.01.2.01h1.3v-1.8h-1.3c-.66 0-1.2-.54-1.2-1.2 0-.66.54-1.2 1.2-1.2h1.15v-1.8H9.3c-1.38 0-2.5-1.12-2.5-2.5 0-1.2.86-2.2 2-2.45.18-.04.36-.05.55-.05 1.05 0 1.95.61 2.38 1.5h1.95c-.56-1.93-2.34-3.35-4.44-3.35-.45 0-.89.07-1.3.2zm11.13.35c-1.2 0-2.18.98-2.18 2.18s.98 2.18 2.18 2.18 2.18-.98 2.18-2.18-.98-2.18-2.18-2.18zm-.13 6c-2.21 0-4 1.79-4 4 0 1.2.53 2.28 1.38 3l1.24-1.24c-.38-.45-.62-1.04-.62-1.76 0-1.38 1.12-2.5 2.5-2.5h.5V9.5h-.5zm.5 5.5v1.8h2.5v-1.8h-2.5z"/>
+            </svg>
+            <span>A Sanctuary for the Inquiring Mind</span>
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          In a noisy world, find the <span class="accent-text">silence of eternal truth.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          When Kurukshetra is inside your own mind, the <strong>Bhagavad Gita</strong> speaks to your heart. Explore sacred scriptures, divine audio stories, and daily reflection habits built for peace, clarity, and purpose.
+        </p>
+
+        <div class="hero-cta-wrapper">
+          <a href="#discovery" class="btn btn-primary hero-cta-btn">Explore the Wisdom &rarr;</a>
+          <button class="btn btn-secondary hero-cta-btn" id="heroCmdTrigger">
+            <span>Search Wisdom</span>
+            <span class="kbd-badge">⌘K</span>
+          </button>
+        </div>
+
+        <!-- Sacred Himalayan Soundscape Ambient Bar -->
+        <div class="hero-soundscape-bar" id="heroSoundscapeBar">
+          <button class="soundscape-play-btn" id="btnHeroSoundscape" aria-label="Toggle Sacred Soundscape">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </button>
+          <div class="sound-wave-eq" id="heroSoundEq">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span id="soundscapeStatusText">Play Sacred Himalayan River & Temple Chants (Live Ambiance)</span>
+        </div>
+
+        <!-- 🪔 3D INTERACTIVE DIGITAL SANCTUARY SHOWCASE (HERO PRODUCT PREVIEW) -->
+        <div class="hero-sanctuary-deck" id="heroSanctuaryDeck">
+          
+          <!-- Deck Top Header -->
+          <div class="sanctuary-deck-header">
+            <div class="deck-status-live">
+              <span class="live-pulse-dot"></span>
+              <span>Sanctuary Mode Active • Himalayan Ganges Dawn</span>
+            </div>
+            <div class="deck-header-actions">
+              <span class="deck-streak-pill" id="deckStreakPill">🔥 7-Day Habit Streak</span>
+              <button class="btn-deck-account" onclick="document.getElementById('btnOpenAccount').click()">+ Save My Practice</button>
+            </div>
+          </div>
+
+          <!-- Deck Main Interactive Stage -->
+          <div class="sanctuary-deck-body">
+            
+            <!-- Left: Living Shloka & Real-time Dilemma Mirror -->
+            <div class="sanctuary-panel-left">
+              <div class="panel-tag-row">
+                <span class="panel-eyebrow">Select Your Mind's Current State:</span>
+              </div>
+              
+              <!-- Dilemma Selector Pills -->
+              <div class="hero-dilemma-chips" id="heroDilemmaChips">
+                <button class="dilemma-chip active" data-dilemma="anxiety">Anxious & Overwhelmed</button>
+                <button class="dilemma-chip" data-dilemma="duty">Torn by Duty</button>
+                <button class="dilemma-chip" data-dilemma="purpose">Searching for Meaning</button>
+                <button class="dilemma-chip" data-dilemma="strength">Powerless & In Doubt</button>
+              </div>
+
+              <!-- Active Live Shloka Card -->
+              <div class="hero-verse-box" id="heroVerseBox">
+                <div class="hero-verse-sanskrit" id="heroVerseSanskrit">
+                  कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br/>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+                </div>
+                <p class="hero-verse-meaning" id="heroVerseMeaning">
+                  “You have a right to your sacred duty, but never to the fruits of your actions. Perform your work with total devotion, free from anxiety of the outcome.”
+                </p>
+                <div class="hero-verse-footer">
+                  <span class="verse-ref-badge" id="heroVerseRef">Bhagavad Gita 2.47 • Nishkama Karma</span>
+                  <button class="btn-save-hero-verse" id="btnSaveHeroVerse">
+                    <span>🔖 Save Verse to Practice</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Habit Loop & Sacred Audio Station -->
+            <div class="sanctuary-panel-right">
+              <div class="panel-tag-row">
+                <span class="panel-eyebrow">Your Daily Habit Progress</span>
+              </div>
+
+              <div class="hero-progress-stack">
+                <div class="hero-track-row">
+                  <div class="track-info">
+                    <span>Mahabharata: Sabha Parva</span>
+                    <span class="track-pct">42%</span>
+                  </div>
+                  <div class="hero-bar-bg"><div class="hero-bar-fill" style="width: 42%;"></div></div>
+                </div>
+
+                <div class="hero-track-row">
+                  <div class="track-info">
+                    <span>Ramayana: Balakanda</span>
+                    <span class="track-pct">68%</span>
+                  </div>
+                  <div class="hero-bar-bg"><div class="hero-bar-fill" style="width: 68%;"></div></div>
+                </div>
+
+                <div class="hero-track-row">
+                  <div class="track-info">
+                    <span>Bhagavad Gita: Chapter 2</span>
+                    <span class="track-pct">80%</span>
+                  </div>
+                  <div class="hero-bar-bg"><div class="hero-bar-fill" style="width: 80%;"></div></div>
+                </div>
+              </div>
+
+              <!-- Audio Recital Preview Box inside Deck -->
+              <div class="hero-audio-widget">
+                <div class="hero-audio-info">
+                  <div class="audio-title-sm" id="heroDeckAudioTitle">Hanuman — The Mountain of Devotion</div>
+                  <div class="audio-sub-sm">Bhakti Yoga Audio Recital (English)</div>
+                </div>
+                <button class="hero-deck-play-btn" id="btnHeroDeckAudio" aria-label="Play Story Preview">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Deck Bottom Hint -->
+          <div class="sanctuary-deck-footer">
+            <span class="interactive-hint-text">✦ Interactive Sanctuary Demo • Click dilemma chips to transform the wisdom mirror in real-time.</span>
+            <button class="btn btn-primary btn-sm" onclick="document.getElementById('btnOpenAccount').click()">Create Free Sanctuary Profile &rarr;</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 🕊️ EMOTIONAL INQUIRY CARDS ("WHAT YOUR HEART SEEKS") -->
+    <section class="inquiry-section" id="inquiry">
+      <div class="container">
+        <div class="inquiry-grid">
+          
+          <!-- Ancient Diya (Akhand Jyoti of Clarity) -->
+          <div class="inquiry-card" data-search="Karma" tabindex="0" role="button" aria-label="When anxious about results">
+            <div>
+              <div class="inquiry-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D95D1E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2c-.5 2.5-2 4.5-2 6.5a2 2 0 0 0 4 0c0-2-1.5-4-2-6.5z" fill="#F8B179" stroke="#D95D1E"/>
+                  <path d="M4 14c0 3.31 3.58 6 8 6s8-2.69 8-6H4z"/>
+                  <path d="M2 14h20"/>
+                  <path d="M9 20v2h6v-2"/>
+                </svg>
+              </div>
+              <div class="inquiry-state">Anxious about Tomorrow?</div>
+              <h3 class="inquiry-prompt">“I am overwhelmed by the uncertainty of results.”</h3>
+            </div>
+            <div class="inquiry-verse-ref">Gita 2.47 • Nishkama Karma &rarr;</div>
+          </div>
+
+          <!-- Ancient Dhanush & Baan (Gandiva Bow of Righteous Duty) -->
+          <div class="inquiry-card" data-search="Dharma" tabindex="0" role="button" aria-label="When torn between duty and emotion">
+            <div>
+              <div class="inquiry-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D95D1E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4c7 4 12 10 16 16"/>
+                  <path d="M4 4v16h16"/>
+                  <line x1="4" y1="20" x2="20" y2="4"/>
+                  <polyline points="14 4 20 4 20 10"/>
+                </svg>
+              </div>
+              <div class="inquiry-state">Torn by Duty?</div>
+              <h3 class="inquiry-prompt">“My heart pulls me one way, but righteousness calls another.”</h3>
+            </div>
+            <div class="inquiry-verse-ref">Gita 2.31 • Swadharma &rarr;</div>
+          </div>
+
+          <!-- Ancient Sacred Padma (8-Petal Vedic Lotus of Moksha) -->
+          <div class="inquiry-card" data-search="Moksha" tabindex="0" role="button" aria-label="Searching for purpose">
+            <div>
+              <div class="inquiry-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D95D1E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3c-1.5 3-2.5 6-2.5 9 0 3 1 4.5 2.5 6 1.5-1.5 2.5-3 2.5-6 0-3-1-6-2.5-9z" fill="rgba(217,93,30,0.12)"/>
+                  <path d="M12 18c-3-1-5.5-3.5-7-6.5 2.5-.5 5.5.5 7 2.5"/>
+                  <path d="M12 18c3-1 5.5-3.5 7-6.5-2.5-.5-5.5.5-7 2.5"/>
+                  <path d="M3 16c2.5 1 5 1.5 9 1.5s6.5-.5 9-1.5"/>
+                </svg>
+              </div>
+              <div class="inquiry-state">Searching for Meaning?</div>
+              <h3 class="inquiry-prompt">“Beyond my daily routine, what is my true self?”</h3>
+            </div>
+            <div class="inquiry-verse-ref">Upanishads • Atman & Brahman &rarr;</div>
+          </div>
+
+          <!-- Ancient Sacred Shankha (Panchajanya Conch of Strength & Bhakti) -->
+          <div class="inquiry-card" data-search="Hanuman" tabindex="0" role="button" aria-label="When feeling powerless">
+            <div>
+              <div class="inquiry-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D95D1E" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 8c-1.5-3-4-5-7-5S6 5 4.5 8C3 11 3.5 15 6 18s6.5 3.5 10 3c3-.5 5.5-2.5 6-5.5.5-3-.5-5.5-3-7.5z"/>
+                  <path d="M12 3v18"/>
+                  <path d="M8 8c1.5 1.5 3 2.5 5 2.5"/>
+                  <path d="M7 13c2 1 4 1.5 6 1"/>
+                </svg>
+              </div>
+              <div class="inquiry-state">Feeling Powerless?</div>
+              <h3 class="inquiry-prompt">“The mountain before me feels too impossible to cross.”</h3>
+            </div>
+            <div class="inquiry-verse-ref">Ramayana • Pure Bhakti &rarr;</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔍 PRODUCT DISCOVERY / LIVE SEARCH (SHOW THE PRODUCT) -->
+    <section class="discovery-section" id="discovery">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Wisdom Discovery Engine</span>
+          <h2 class="section-title">Find the wisdom you need for right now.</h2>
+          <p class="section-subtitle">
+            Search characters, life dilemmas, sacred parvas, or philosophical inquiries across our knowledge base.
+          </p>
+        </div>
+
+        <!-- Interactive Search Hub Card -->
+        <div class="discovery-search-card">
+          <div class="search-input-group">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D95D1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="search-icon-symbol">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              id="discoverySearchInput" 
+              class="search-field" 
+              placeholder="Search Krishna, Karma, Bhagavad Gita, Dharma, Hanuman, Peace..." 
+              aria-label="Search Sanatan wisdom and scriptures" 
+              autocomplete="off"
+            />
+            <div class="search-shortcut-pill">
+              <span class="kbd-badge">Press ⌘K anywhere</span>
+            </div>
+            <button class="search-action-btn" id="discoverySearchBtn">Search</button>
+          </div>
+
+          <!-- Suggested Topic Chips -->
+          <div class="suggested-tags-row">
+            <span class="suggested-label">Popular Queries:</span>
+            <button class="suggestion-chip" data-term="Bhagavad Gita">Bhagavad Gita</button>
+            <button class="suggestion-chip" data-term="Karma">Karma & Action</button>
+            <button class="suggestion-chip" data-term="Dharma">Dharma & Duty</button>
+            <button class="suggestion-chip" data-term="Ramayana">The Ramayana</button>
+            <button class="suggestion-chip" data-term="Moksha">Moksha & Peace</button>
+            <button class="suggestion-chip" data-term="Hanuman">Hanuman's Devotion</button>
+          </div>
+
+          <!-- Live Dynamic Results -->
+          <div class="live-results-container" id="discoveryResultsContainer">
+            <div class="results-header-info">
+              <span id="discoveryResultsCount">Recommended Explorations</span>
+            </div>
+            <div class="results-grid-display" id="discoveryResultsGrid">
+              <!-- Dynamically populated via js/search.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🪔 "ASK THE GITA" REAL-TIME DILEMMA ORACLE -->
+    <section class="oracle-section" id="oracle">
+      <div class="container">
+        <div class="oracle-card">
+          <div class="oracle-header">
+            <span class="section-tag" style="color: var(--accent-gold);">● Interactive Philosophical Consultation</span>
+            <h2 class="oracle-title">गीता संवाद — Ask the Gita for Divine Counsel</h2>
+            <p class="oracle-subtitle">
+              Bring whatever weighs upon your spirit today. Select an emotion or type your life dilemma to receive Krishna’s direct counsel to Arjuna.
+            </p>
+          </div>
+
+          <!-- Oracle Seeker Input -->
+          <div class="oracle-input-box">
+            <div class="oracle-input-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="oracle-search-icon">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="oracleInput" class="oracle-input" placeholder="Type your situation (e.g. 'fear of failing in my exam', 'betrayed by a friend', 'cannot focus')..." autocomplete="off" />
+              <button class="btn btn-primary btn-sm oracle-submit-btn" id="btnOracleConsult">Consult Gita &rarr;</button>
+            </div>
+
+            <!-- Instant Dilemma Tag Presets -->
+            <div class="oracle-chips-row" id="oracleChipsRow">
+              <span class="oracle-chip-label">Quick Inquiries:</span>
+              <button class="oracle-chip active" data-query="anxiety">Overthinking & Anxiety</button>
+              <button class="oracle-chip" data-query="failure">Fear of Failure & Loss</button>
+              <button class="oracle-chip" data-query="anger">Anger & Loss of Calm</button>
+              <button class="oracle-chip" data-query="grief">Grief & Attachment</button>
+              <button class="oracle-chip" data-query="purpose">Lack of Purpose</button>
+              <button class="oracle-chip" data-query="duty">Torn in Hard Choices</button>
+            </div>
+          </div>
+
+          <!-- Oracle 3D Sacred Revelation Card -->
+          <div class="oracle-revelation-card" id="oracleRevelationCard">
+            <div class="oracle-badge-row">
+              <span class="oracle-verse-pill" id="oracleVerseRef">Gita 2.47 • Nishkama Karma Yoga</span>
+              <span class="oracle-xp-pill">+20 Karma XP Awarded ✨</span>
+            </div>
+
+            <div class="oracle-sanskrit" id="oracleSanskrit">
+              कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br/>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+            </div>
+
+            <p class="oracle-translation" id="oracleTranslation">
+              “You have a right only to work, never to its fruits. Let not the fruit of action be your motive, nor let your attachment be to inaction.”
+            </p>
+
+            <div class="oracle-actionable-box">
+              <div class="oracle-action-heading">🪔 What Krishna Advises You Right Now:</div>
+              <p class="oracle-action-text" id="oracleActionText">
+                Shift your entire mental energy from the outcome to the sacred act in front of you. Anxiety is simply future projection. Complete your present responsibility with complete heart, and surrender the final result to the cosmos.
+              </p>
+            </div>
+
+            <div class="oracle-card-footer">
+              <button class="btn btn-secondary btn-sm btn-sound-singing-bowl" id="btnChantSingingBowl">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin-right: 6px; vertical-align: -2px; stroke: currentColor;">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="3" r="1.2" fill="currentColor"/>
+                </svg>
+                <span>Play 528Hz Singing Bowl Chime</span>
+              </button>
+              <button class="btn btn-primary btn-sm" id="btnSaveOracleVerse">
+                <span>🔖 Save Counsel to Practice Hub</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 📊 PERSONAL PRACTICE & HABIT DASHBOARD -->
+    <section class="practice-dashboard-section" id="practice">
+      <div class="container">
+        <div class="practice-dashboard-card">
+          <div>
+            <div class="dashboard-heading-tag">● Daily Spiritual Practice Hub</div>
+            <h2 class="dashboard-title">Your Personal Sanctuary for Reflection</h2>
+            <p class="dashboard-desc">
+              Build a daily habit of quiet contemplation. Track your reflection streaks, bookmark verses that touched your soul, and monitor your reading journey across sacred epics.
+            </p>
+
+            <div class="streak-metrics-row">
+              <div class="metric-box">
+                <div class="metric-val" style="display:flex; align-items:center; justify-content:center; gap:6px;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F8B179" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2c-.5 1.5-1.5 2.5-3 3 1.5.5 2.5 1.5 3 3 .5-1.5 1.5-2.5 3-3-1.5-.5-2.5-1.5-3-3z" fill="#F8B179"/>
+                    <path d="M8 8h8v2c0 3-2 5-4 5s-4-2-4-5V8z"/>
+                    <path d="M6 13c-1.5 1.5-2 3.5-1.5 5.5 1 3 4 4.5 7.5 4.5s6.5-1.5 7.5-4.5c.5-2 0-4-1.5-5.5"/>
+                  </svg>
+                  <span>7 Days</span>
+                </div>
+                <div class="metric-label">Reflection Streak</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-val" id="metricBookmarkCount">14</div>
+                <div class="metric-label">Verses Bookmarked</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-val">3 / 18</div>
+                <div class="metric-label">Parvas Explored</div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary btn-sm" id="btnHeroAccount">Create Free Practice Profile &rarr;</button>
+          </div>
+
+          <div class="dashboard-side-panel">
+            <!-- 🧭 24-HOUR DINCHARYA VEDIC RHYTHM CLOCK WIDGET -->
+            <div class="dincharya-widget-box">
+              <div class="dincharya-header">
+                <span class="dincharya-badge">Live Vedic Cycle</span>
+                <span class="dincharya-time" id="dincharyaLiveTime">--:--</span>
+              </div>
+              <div class="dincharya-rhythm-info">
+                <h4 class="dincharya-phase-title" id="dincharyaPhaseTitle">Brahma Muhurta (4:00 - 6:00 AM)</h4>
+                <p class="dincharya-phase-desc" id="dincharyaPhaseDesc">Hour of profound silence and creative stillness. Highest prana for contemplation.</p>
+              </div>
+              <div class="dincharya-track-bars">
+                <span class="dincharya-pill" id="dp-brahma">Brahma</span>
+                <span class="dincharya-pill" id="dp-praataha">Praataha</span>
+                <span class="dincharya-pill" id="dp-madhyahna">Madhyahna</span>
+                <span class="dincharya-pill" id="dp-sandhya">Sandhya</span>
+                <span class="dincharya-pill" id="dp-nishi">Nishi</span>
+              </div>
+            </div>
+
+            <!-- Reading Progress Tracks -->
+            <div class="progress-track-item">
+              <div class="track-header">
+                <span>The Mahabharata (18 Parvas)</span>
+                <span style="color: var(--accent-saffron);">Sabha Parva • 42%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: 42%;"></div>
+              </div>
+            </div>
+
+            <div class="progress-track-item">
+              <div class="track-header">
+                <span>The Ramayana (7 Kandas)</span>
+                <span style="color: var(--accent-saffron);">Balakanda • 68%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: 68%;"></div>
+              </div>
+            </div>
+
+            <div class="progress-track-item" style="margin-bottom: 0;">
+              <div class="track-header">
+                <span>Bhagavad Gita Chapters</span>
+                <span style="color: var(--accent-saffron);">Chapter 2 • 80%</span>
+              </div>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" style="width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔱 INTERACTIVE PHILOSOPHY EXPLORER (Dharma | Karma | Moksha) -->
+    <section class="philosophy-section" id="philosophy">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">The Pillars of Conscious Living</span>
+          <h2 class="section-title">सनातन धर्म – The Eternal Pillars</h2>
+          <p class="section-subtitle">
+            Sanatan Dharma is not dogma; it is an eternal compass guiding righteous duty, conscious action, and soul liberation. Select a pillar to reflect upon its essence.
+          </p>
+        </div>
+
+        <!-- Segmented Tab Controls -->
+        <div class="philosophy-tabs-container" role="tablist" aria-label="Core Philosophy Pillars">
+          <button class="philosophy-tab-btn active" data-pillar="dharma" role="tab" aria-selected="true">
+            <span class="tab-hindi">धर्म</span>
+            <span>Dharma (Righteous Duty)</span>
+          </button>
+          <button class="philosophy-tab-btn" data-pillar="karma" role="tab" aria-selected="false">
+            <span class="tab-hindi">कर्म</span>
+            <span>Karma (Conscious Action)</span>
+          </button>
+          <button class="philosophy-tab-btn" data-pillar="moksha" role="tab" aria-selected="false">
+            <span class="tab-hindi">मोक्ष</span>
+            <span>Moksha (Liberation)</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Content Stage Card -->
+        <div class="philosophy-stage-card" id="philosophyStageCard">
+          <div class="stage-content">
+            <span class="stage-tagline" id="stageTagline">The Foundation of Cosmic & Moral Order</span>
+            <h3 class="stage-title" id="stageTitle">
+              <span class="stage-title-hindi">धर्म</span> Dharma
+            </h3>
+            <div class="stage-sanskrit-quote" id="stageQuote">
+              यतो धर्मस्ततो जयः — Where there is Dharma, there is victory.
+            </div>
+            <p class="stage-explanation" id="stageExplanation">
+              Dharma is the universal principle of righteousness, duty, and harmony that sustains the cosmos. Living in Dharma means aligning thought, word, and action with moral integrity, compassion, and universal well-being.
+            </p>
+            <div class="stage-action-box" id="stageAction">
+              <a href="sanatan.html#dharma" class="btn btn-primary btn-sm">Read in-depth philosophy on Dharma &rarr;</a>
+            </div>
+          </div>
+
+          <div class="stage-visual">
+            <div class="stage-image-frame">
+              <img src="images/dharma-chakra.jpg" alt="Sacred Dharma Chakra Emblem" id="stageImage" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 📜 EXPLORE SACRED SCRIPTURES -->
+    <section class="scriptures-section" id="scriptures">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Sacred Literature</span>
+          <h2 class="section-title">Explore Sacred Epics & Shastras</h2>
+          <p class="section-subtitle">
+            Immerse yourself in chapter-by-chapter breakdowns of humanity's greatest spiritual narratives.
+          </p>
+        </div>
+
+        <div class="scriptures-grid">
+          
+          <!-- Ramayana Card -->
+          <article class="scripture-card">
+            <div class="scripture-media">
+              <img src="images/ramayan.png" alt="The Epic Ramayana" loading="lazy" />
+              <span class="scripture-badge">7 Kandas • 24,000 Verses</span>
+            </div>
+            <div class="scripture-body">
+              <h3 class="scripture-title">The Ramayana</h3>
+              <p class="scripture-desc">
+                Follow the journey of Lord Rama, Sita, and Lakshman. Discover how truth, duty, humility, and devotion triumph over ego and arrogance.
+              </p>
+              <a href="ramayana.html" class="scripture-action">Explore Epic &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Mahabharata Card -->
+          <article class="scripture-card">
+            <div class="scripture-media">
+              <img src="images/mahabharat.png" alt="The Epic Mahabharata" loading="lazy" />
+              <span class="scripture-badge">18 Parvas • 100,000 Verses</span>
+            </div>
+            <div class="scripture-body">
+              <h3 class="scripture-title">The Mahabharata</h3>
+              <p class="scripture-desc">
+                The grand epic of Kurukshetra exploring righteous statecraft, complex human bonds, loyalty, and the ultimate victory of cosmic order.
+              </p>
+              <a href="mahabharata.html" class="scripture-action">Explore 18 Parvas &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Bhagavad Gita Card -->
+          <article class="scripture-card">
+            <div class="scripture-media">
+              <img src="images/krishna.png" alt="Bhagavad Gita Divine Dialogue" loading="lazy" />
+              <span class="scripture-badge">18 Chapters • 700 Verses</span>
+            </div>
+            <div class="scripture-body">
+              <h3 class="scripture-title">Bhagavad Gita</h3>
+              <p class="scripture-desc">
+                Lord Krishna's timeless battlefield counseling to Arjuna, illuminating Karma Yoga, Bhakti Yoga, and Jnana Yoga for modern living.
+              </p>
+              <a href="mahabharata.html#bhishma" class="scripture-action">Explore Teachings &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🌺 DAILY WISDOM / TODAY'S SHLOKA & SOUL REFLECTION -->
+    <section class="shloka-section" id="daily-wisdom">
+      <div class="container shloka-container">
+        
+        <div class="section-header">
+          <span class="section-tag">Daily Habit Loop</span>
+          <h2 class="section-title">Today's Sacred Verse & Soul Reflection</h2>
+          <p class="section-subtitle">
+            A daily timeless Sanskrit verse paired with a practical reflection prompt for peace, focus, and conscious action.
+          </p>
+        </div>
+
+        <div class="shloka-card">
+          <div class="shloka-sanskrit" id="shlokaSanskrit">
+            कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।<br/>मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ॥
+          </div>
+          <p class="shloka-translation" id="shlokaTranslation">
+            “You have a sacred right to perform your duty, but you are not entitled to the fruits of action. Never let anxiety for results paralyze you, and never surrender to inaction.”
+          </p>
+          
+          <div class="shloka-reflection-box">
+            <div class="reflection-label">💡 Heart Reflection for Today:</div>
+            <div id="shlokaReflectionText">When you pour your entire heart into your craft without burning yourself out over the outcome, peace becomes your natural state. Give your best today; let the universe handle the fruits.</div>
+          </div>
+
+          <div class="pill-badge" id="shlokaSource" style="margin-bottom: 24px;">
+            — Bhagavad Gita 2.47
+          </div>
+
+          <div class="shloka-controls">
+            <button class="shloka-nav-btn" id="btnPrevShloka">&larr; Previous Verse</button>
+            <button class="btn btn-secondary btn-sm" id="btnBookmarkShloka">
+              <!-- Ancient Palm-Leaf Tala-Patra Granth Scroll Motif -->
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z"/>
+                <path d="M6 4v16"/>
+                <path d="M18 4v16"/>
+                <line x1="9" y1="9" x2="15" y2="9"/>
+                <line x1="9" y1="13" x2="15" y2="13"/>
+              </svg>
+              <span>Save Verse to Practice</span>
+            </button>
+            <button class="shloka-nav-btn" id="btnNextShloka">Next Verse &rarr;</button>
+          </div>
+        </div>
+
+        <!-- 🧘 Mindful Breath & Stillness Pause Sanctuary -->
+        <div class="mindful-breath-sanctuary" id="breathSanctuary">
+          <div class="breath-header">
+            <div class="breath-tag">🕊️ 60-Second Dhyana Stillness Pause</div>
+            <h3 class="breath-title">Center Your Heart with Sacred Breath</h3>
+            <p class="breath-desc">When the worldly mind wanders into anxiety or hurriedness, take 4 deep, conscious breaths to return to the eternal present.</p>
+          </div>
+          <div class="breath-lotus-wrapper">
+            <div class="breath-glow-ring" id="breathGlowRing"></div>
+            <div class="breath-orb" id="breathOrb">
+              <span class="breath-text" id="breathStatusText">Breathe In</span>
+            </div>
+          </div>
+          <div class="breath-actions">
+            <button class="btn btn-primary btn-sm" id="btnToggleBreath">
+              <span>Begin Guided Stillness (60s)</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🛕 3D SACRED PILGRIMAGE DARSHAN HUB (TIRTHA YATRA) -->
+    <section class="pilgrimage-section" id="pilgrimage">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" style="color: var(--accent-gold);">● Sacred Geography & Temples</span>
+          <h2 class="section-title">तीर्थ दर्शन — Sacred Pilgrimage Portals</h2>
+          <p class="section-subtitle">
+            Experience the spiritual energy centers of Bharat. Click any holy dham to enter virtual darshan and stream temple chanting.
+          </p>
+        </div>
+
+        <div class="pilgrimage-grid">
+          <!-- Kedarnath -->
+          <div class="pilgrimage-card" data-shrine="kedarnath" tabindex="0">
+            <div class="pilgrimage-thumb-box">
+              <img src="images/kedarnath-shrine.jpg" alt="Kedarnath Himalayan Shrine" loading="lazy" />
+              <span class="pilgrimage-elevation-badge">3,583m • Himalayas</span>
+              <button class="pilgrimage-bell-btn" title="Ring Temple Bell" aria-label="Ring Kedarnath Temple Bell">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="pilgrimage-bell-svg" aria-hidden="true">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="3" r="1.2" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <div class="pilgrimage-body">
+              <div class="pilgrimage-meta">Jyotirlinga • Uttarakhand</div>
+              <h3 class="pilgrimage-title">Kedarnath Mahadev</h3>
+              <p class="pilgrimage-desc">The primordial seat of Lord Shiva amidst glacial Himalayan peaks, where eternal stillness purifies the soul.</p>
+              <div class="pilgrimage-footer">
+                <span class="pilgrimage-mantra">ॐ नमः शिवाय</span>
+                <span class="pilgrimage-link">Explore Darshan &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kashi Varanasi -->
+          <div class="pilgrimage-card" data-shrine="kashi" tabindex="0">
+            <div class="pilgrimage-thumb-box">
+              <img src="images/kashi-shrine.jpg" alt="Varanasi Ganges Ghats" loading="lazy" />
+              <span class="pilgrimage-elevation-badge">Sacred Ghats • Ganga</span>
+              <button class="pilgrimage-bell-btn" title="Ring Temple Bell" aria-label="Ring Kashi Temple Bell">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="pilgrimage-bell-svg" aria-hidden="true">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="3" r="1.2" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <div class="pilgrimage-body">
+              <div class="pilgrimage-meta">Moksha Puri • Uttar Pradesh</div>
+              <h3 class="pilgrimage-title">Kashi Vishwanath</h3>
+              <p class="pilgrimage-desc">The oldest living city on Earth, bathed in the eternal golden light of the celestial Ganga Aarti and cosmic liberation.</p>
+              <div class="pilgrimage-footer">
+                <span class="pilgrimage-mantra">हर हर गंगे</span>
+                <span class="pilgrimage-link">Explore Darshan &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tirupati Balaji -->
+          <div class="pilgrimage-card" data-shrine="tirupati" tabindex="0">
+            <div class="pilgrimage-thumb-box">
+              <img src="images/tirupati-shrine.jpg" alt="Tirupati Venkateswara Temple" loading="lazy" />
+              <span class="pilgrimage-elevation-badge">Seven Sacred Hills</span>
+              <button class="pilgrimage-bell-btn" title="Ring Temple Bell" aria-label="Ring Tirupati Temple Bell">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="pilgrimage-bell-svg" aria-hidden="true">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="3" r="1.2" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <div class="pilgrimage-body">
+              <div class="pilgrimage-meta">Vaikuntha on Earth • Andhra</div>
+              <h3 class="pilgrimage-title">Tirupati Venkateswara</h3>
+              <p class="pilgrimage-desc">The supreme abode of Lord Srinivasa where unuttered prayers receive infinite grace and boundless love.</p>
+              <div class="pilgrimage-footer">
+                <span class="pilgrimage-mantra">गोविन्दा गोविन्दा</span>
+                <span class="pilgrimage-link">Explore Darshan &rarr;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dwarka -->
+          <div class="pilgrimage-card" data-shrine="dwarka" tabindex="0">
+            <div class="pilgrimage-thumb-box">
+              <img src="images/dwarka-shrine.jpg" alt="Dwarkadhish Coastal Temple" loading="lazy" />
+              <span class="pilgrimage-elevation-badge">Arabian Sea • Coastal</span>
+              <button class="pilgrimage-bell-btn" title="Ring Temple Bell" aria-label="Ring Dwarka Temple Bell">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="pilgrimage-bell-svg" aria-hidden="true">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="12" cy="3" r="1.2" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <div class="pilgrimage-body">
+              <div class="pilgrimage-meta">Char Dham • Gujarat</div>
+              <h3 class="pilgrimage-title">Dwarkadhish Kingdom</h3>
+              <p class="pilgrimage-desc">The sacred submerged capital of Bhagavan Krishna, radiating divine sovereignty, ocean serenity, and moral dharma.</p>
+              <div class="pilgrimage-footer">
+                <span class="pilgrimage-mantra">जय श्री कृष्ण</span>
+                <span class="pilgrimage-link">Explore Darshan &rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🪔 CURATED DIVINE STORIES -->
+    <section class="stories-section" id="stories">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Narratives of Faith</span>
+          <h2 class="section-title">Curated Divine Stories & Audio Recitals</h2>
+          <p class="section-subtitle">
+            Inspirational stories of unwavering devotion, historical miracles, and spiritual realization with audio recitals.
+          </p>
+        </div>
+
+        <div class="stories-grid">
+          
+          <!-- Story 1: Hanuman -->
+          <article class="story-card">
+            <div class="story-thumb-frame">
+              <img src="images/hanuman.png" alt="Hanuman lifting Dronagiri Mountain" loading="lazy" />
+              <button class="story-play-overlay-btn" data-audio-src="audio/hanuman-en.mp3" data-title="Hanuman — The Mountain of Devotion" data-sub="Bhakti Yoga Audio Story" title="Play Audio Story">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+            </div>
+            <div class="story-meta-row">
+              <span>Bhakti Yoga</span> • <span>Audio Available</span>
+            </div>
+            <h3 class="story-card-title">Hanuman — The Mountain of Devotion</h3>
+            <p class="story-card-desc">
+              When Lakshman fell on the battlefield of Lanka, Hanuman lifted the entire Himalayan mountain to deliver the life-saving Sanjeevani herb.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <a href="stories.html#hanuman" class="story-card-btn">Read Text &rarr;</a>
+              <button class="btn btn-secondary btn-sm btn-listen-story" data-audio-src="audio/hanuman-en.mp3" data-title="Hanuman — The Mountain of Devotion" data-sub="Bhakti Yoga Story">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+                <span>Listen</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Story 2: Temple Miracle -->
+          <article class="story-card">
+            <div class="story-thumb-frame">
+              <img src="images/temple-miracle.png" alt="Sacred Tirupati Temple Miracle" loading="lazy" />
+              <button class="story-play-overlay-btn" data-audio-src="audio/tirupati-en.mp3" data-title="The Silent Devotee of Tirupati" data-sub="Sacred Temple Miracle" title="Play Audio Story">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+            </div>
+            <div class="story-meta-row">
+              <span>Temple Miracle</span> • <span>Tirupati</span>
+            </div>
+            <h3 class="story-card-title">The Silent Devotee of Tirupati</h3>
+            <p class="story-card-desc">
+              How a humble, unlettered devotee’s unuttered heart prayer received an extraordinary divine response at the sacred shrine of Venkateswara.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <a href="stories.html#tirupati" class="story-card-btn">Read Text &rarr;</a>
+              <button class="btn btn-secondary btn-sm btn-listen-story" data-audio-src="audio/tirupati-en.mp3" data-title="The Silent Devotee of Tirupati" data-sub="Sacred Temple Miracle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+                <span>Listen</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Story 3: Saint in Rishikesh -->
+          <article class="story-card">
+            <div class="story-thumb-frame">
+              <img src="images/sage.png" alt="Saint in Deep Meditation in Rishikesh" loading="lazy" />
+              <button class="story-play-overlay-btn" data-audio-src="audio/rishikesh-en.mp3" data-title="Encounter on the Banks of Ganga" data-sub="Saint Experience in Rishikesh" title="Play Audio Story">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </button>
+            </div>
+            <div class="story-meta-row">
+              <span>Inner Realization</span> • <span>Rishikesh</span>
+            </div>
+            <h3 class="story-card-title">Encounter on the Banks of Ganga</h3>
+            <p class="story-card-desc">
+              A seeker meets an illuminated sadhu along the Himalayan riverbank and learns the profound truth of unconditional surrender and inner peace.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <a href="stories.html#saint" class="story-card-btn">Read Text &rarr;</a>
+              <button class="btn btn-secondary btn-sm btn-listen-story" data-audio-src="audio/rishikesh-en.mp3" data-title="Encounter on the Banks of Ganga" data-sub="Saint Experience in Rishikesh">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+                <span>Listen</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 🚩 FINAL INVITATION CTA -->
+    <section class="final-cta-section">
+      <div class="container">
+        <div class="final-cta-card">
+          <h2 class="final-cta-title">Begin your journey into eternal wisdom.</h2>
+          <p class="final-cta-desc">
+            A digital sanctuary crafted for every seeker to explore sacred scriptures, listen to narrated audio stories, and cultivate a quiet daily reflection habit.
+          </p>
+          <button class="btn btn-primary" onclick="document.getElementById('btnOpenAccount').click()">Create Free Practice Profile &rarr;</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🎵 FLOATING AUDIO DOCK PLAYER -->
+  <div class="floating-audio-dock" id="floatingAudioDock" aria-label="Audio Recital Player">
+    <div class="dock-track-info">
+      <span class="dock-track-title" id="dockTrackTitle">Hanuman — The Mountain of Devotion</span>
+      <span class="dock-track-sub" id="dockTrackSub">Narrated Audio Story • English</span>
+    </div>
+    <div class="sound-wave-eq dock-eq" id="dockSoundEq">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="dock-controls">
+      <button class="dock-play-btn" id="btnDockPlay" aria-label="Play/Pause Audio">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </button>
+      <button class="dock-close-btn" id="btnDockClose" aria-label="Close Audio Dock">&times;</button>
+    </div>
+  </div>
+
+  <!-- 🔍 SPOTLIGHT COMMAND PALETTE MODAL (⌘K) -->
+  <div class="command-palette-modal" id="commandPaletteModal" role="dialog" aria-modal="true" aria-label="Quick Command Palette">
+    <div class="command-palette-box">
+      <div class="palette-search-bar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D95D1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="palette-input" id="paletteSearchInput" placeholder="Type a scripture, life dilemma, or character..." autocomplete="off" />
+        <span class="kbd-badge">ESC to close</span>
+      </div>
+      <div class="palette-results-list" id="paletteResultsList">
+        <!-- Dynamically rendered -->
+      </div>
+      <div class="palette-footer">
+        <span>Navigation: Use arrow keys &bull; Press Enter to select</span>
+        <span>EternalDharma v3.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 👤 GAMIFIED SADHANA & PRACTICE PROFILE MODAL -->
+  <div class="account-modal" id="accountModal" role="dialog" aria-modal="true" aria-label="Sadhana Practice Hub">
+    <div class="account-card-modal">
+      <button class="btn-close-account" id="btnCloseAccount" aria-label="Close modal">&times;</button>
+      
+      <!-- VIEW A: ACTIVE SEEKER PROFILE (When Logged In) -->
+      <div id="accountActiveView" style="display: none;">
+        <div class="sadhana-profile-header">
+          <div class="sadhana-avatar-halo">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-gold);">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="sadhana-identity">
+            <h3 class="sadhana-seeker-name" id="modalSeekerName">Himanshu</h3>
+            <span class="sadhana-rank-badge" id="modalSeekerRank">Level 3 • Sadhaka (Devotee)</span>
+          </div>
+        </div>
+
+        <!-- Karma Sadhana XP Level Track -->
+        <div class="sadhana-xp-section">
+          <div class="xp-labels-row">
+            <span class="xp-title">Karma Sadhana Points</span>
+            <span class="xp-val-text"><strong id="modalKarmaVal">340</strong> / <span id="modalNextRankXP">500</span> XP</span>
+          </div>
+          <div class="xp-progress-bar-bg">
+            <div class="xp-progress-bar-fill" id="modalXPProgressFill" style="width: 68%;"></div>
+          </div>
+          <span class="xp-next-hint" id="modalNextRankHint">Next: Jnani (Knower of Truth)</span>
+        </div>
+
+        <!-- 4-Stat Gamified Grid -->
+        <div class="sadhana-stats-grid">
+          <div class="sadhana-stat-card">
+            <span class="sadhana-stat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #F8B179;">
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+              </svg>
+            </span>
+            <strong class="sadhana-stat-val" id="modalStreakCount">7 Days</strong>
+            <span class="sadhana-stat-lbl">Daily Streak</span>
+          </div>
+          <div class="sadhana-stat-card">
+            <span class="sadhana-stat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #F8B179;">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </span>
+            <strong class="sadhana-stat-val" id="modalBookmarkCount">14</strong>
+            <span class="sadhana-stat-lbl">Verses Saved</span>
+          </div>
+          <div class="sadhana-stat-card">
+            <span class="sadhana-stat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #F8B179;">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+              </svg>
+            </span>
+            <strong class="sadhana-stat-val" id="modalBreathCount">5</strong>
+            <span class="sadhana-stat-lbl">Mindful Pauses</span>
+          </div>
+          <div class="sadhana-stat-card">
+            <span class="sadhana-stat-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color: #F8B179;">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </span>
+            <strong class="sadhana-stat-val" id="modalKarmaTotal">340</strong>
+            <span class="sadhana-stat-lbl">Total Karma</span>
+          </div>
+        </div>
+
+        <!-- Unlocked Spiritual Badges -->
+        <div class="sadhana-achievements-row">
+          <span class="achievement-pill unlocked" title="Joined Sanctuary">Seeker</span>
+          <span class="achievement-pill unlocked" title="Saved 5+ verses">Verse Sage</span>
+          <span class="achievement-pill unlocked" title="Completed Guided Pause">Ganges Breath</span>
+          <span class="achievement-pill locked" id="badgeScholar" title="Earn 500 XP to Unlock">Dharmic Scholar</span>
+        </div>
+
+        <!-- Quick Switch or Rename Inline -->
+        <div class="sadhana-edit-row">
+          <button class="btn btn-secondary btn-sm" id="btnShowRenameForm" style="font-size: 0.75rem; padding: 6px 14px;">Change Name</button>
+          <button class="btn btn-secondary btn-sm btn-danger-soft" id="btnLogoutAccount" style="font-size: 0.75rem; padding: 6px 14px; color: #EF4444; border-color: rgba(239, 68, 68, 0.3);">Sign Out / Switch</button>
+        </div>
+
+        <!-- Inline Rename Form -->
+        <form class="sadhana-rename-form" id="sadhanaRenameForm" style="display: none; margin-top: 14px;">
+          <div style="display: flex; gap: 8px;">
+            <input type="text" class="account-input" id="renameInput" placeholder="New Seeker Name..." required style="padding: 8px 12px; font-size: 0.8125rem;" />
+            <button type="submit" class="btn btn-primary" style="padding: 8px 14px; font-size: 0.8125rem;">Save</button>
+            <button type="button" class="btn btn-secondary" id="btnCancelRename" style="padding: 8px 12px; font-size: 0.8125rem;">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- VIEW B: REGISTER NEW SEEKER (When Logged Out) -->
+      <div id="accountRegisterView">
+        <div class="sadhana-avatar-halo" style="margin: 0 auto 14px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-saffron);">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+          </svg>
+        </div>
+        <h3 class="account-modal-title">Begin Your Sacred Sadhana</h3>
+        <p class="account-modal-subtitle">Earn Karma XP, track reflection streaks, and collect sacred verses across the Upanishads and Gita.</p>
+        
+        <form class="account-form" id="accountForm">
+          <input type="text" class="account-input" id="accountNameInput" placeholder="Your Name (e.g. Himanshu, Arjuna...)" required />
+          
+          <!-- Custom SVG Goal Selector Dropdown -->
+          <div class="custom-goal-dropdown" id="customGoalDropdown">
+            <input type="hidden" id="accountGoalInput" value="inner_peace" />
+            <button type="button" class="goal-dropdown-trigger" id="goalDropdownTrigger" aria-haspopup="listbox" aria-expanded="false">
+              <span class="goal-trigger-content">
+                <svg class="goal-svg-icon" id="currentGoalIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                </svg>
+                <span id="currentGoalText">Goal: Inner Peace &amp; Emotional Clarity</span>
+              </span>
+              <svg class="goal-chevron-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            
+            <div class="goal-dropdown-menu" id="goalDropdownMenu" role="listbox">
+              <div class="goal-option-item active" data-value="inner_peace" data-text="Goal: Inner Peace &amp; Emotional Clarity" role="option" aria-selected="true">
+                <svg class="goal-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="4"></circle>
+                </svg>
+                <span class="goal-option-label">Goal: Inner Peace &amp; Emotional Clarity</span>
+                <svg class="goal-check-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+
+              <div class="goal-option-item" data-value="dharma_duty" data-text="Goal: Dharma, Righteous Action &amp; Courage" role="option" aria-selected="false">
+                <svg class="goal-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span class="goal-option-label">Goal: Dharma, Righteous Action &amp; Courage</span>
+                <svg class="goal-check-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+
+              <div class="goal-option-item" data-value="scripture_study" data-text="Goal: Deep Study of Upanishads &amp; Gita" role="option" aria-selected="false">
+                <svg class="goal-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span class="goal-option-label">Goal: Deep Study of Upanishads &amp; Gita</span>
+                <svg class="goal-check-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="padding: 12px 24px; font-size: 0.9375rem; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Activate Sanctuary Profile (+50 Karma XP) &rarr;</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🌟 LIVE FLOATING KARMA XP TOAST NOTIFICATIONS -->
+  <div class="karma-toast-container" id="karmaToastContainer"></div>
+
+  <!-- 🦶 SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-info">
+          <div class="brand-logo" style="margin-bottom: 8px;">
+            <svg class="brand-emblem-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="dharmaGoldGradFoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FCD34D" />
+                  <stop offset="50%" stop-color="#F59E0B" />
+                  <stop offset="100%" stop-color="#D95D1E" />
+                </linearGradient>
+              </defs>
+              <circle cx="24" cy="24" r="21" stroke="url(#dharmaGoldGradFoot)" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
+              <circle cx="24" cy="24" r="16" stroke="url(#dharmaGoldGradFoot)" stroke-width="1.4" />
+              <path d="M24 8 L24 40 M8 24 L40 24 M12.7 12.7 L35.3 35.3 M12.7 35.3 L35.3 12.7" stroke="url(#dharmaGoldGradFoot)" stroke-width="1.2" stroke-linecap="round" opacity="0.65" />
+              <path d="M24 13 C21.5 17 19 20.5 19 24.5 C19 27.5 21.2 30 24 30 C26.8 30 29 27.5 29 24.5 C29 20.5 26.5 17 24 13 Z" fill="url(#dharmaGoldGradFoot)" />
+              <circle cx="24" cy="24.5" r="2.2" fill="#FFFDF0" />
+            </svg>
+            <span class="brand-title" style="color: #FFFFFF;">EternalDharma</span>
+          </div>
+          <p>
+            A modern digital platform dedicated to preserving, illuminating, and sharing the timeless wisdom of Sanatan Dharma for contemporary seekers.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Sacred Scriptures</h4>
+          <ul class="footer-links-list">
+            <li><a href="ramayana.html" class="footer-link">The Ramayana (7 Kandas)</a></li>
+            <li><a href="mahabharata.html" class="footer-link">The Mahabharata (18 Parvas)</a></li>
+            <li><a href="mahabharata.html#bhishma" class="footer-link">The Bhagavad Gita</a></li>
+            <li><a href="sanatan.html" class="footer-link">Core Vedic Philosophy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform & Explorations</h4>
+          <ul class="footer-links-list">
+            <li><a href="#inquiry" class="footer-link">Life Dilemma Inquiries</a></li>
+            <li><a href="#discovery" class="footer-link">Wisdom Discovery Search (⌘K)</a></li>
+            <li><a href="#practice" class="footer-link">Personal Practice Tracker</a></li>
+            <li><a href="about.html" class="footer-link">About the Mission</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 EternalDharma. Built with reverence and craft.</span>
+        <span>In pursuit of peace, clarity, and eternal truth.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 🔺 Back to Top Button -->
+  <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top">
+    &uarr;
+  </button>
+
+  <!-- JavaScript Modules -->
+  <script src="js/search.js" defer></script>
+  <script src="js/shloka.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
