@@ -13,12 +13,12 @@ body {
   background: linear-gradient(180deg, #f1a208, #d17f05);
   color: white;
   position: fixed;
-  margin-top: -30px;
-  top: 0;
+  top: 80px;
   left: 0;
-  height: 100vh;
+  height: calc(100vh - 80px);
   padding: 30px 20px;
   overflow-y: auto;
+  z-index: 50;
 }
 
 .side-nav h2 {

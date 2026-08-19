@@ -3,188 +3,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Incidents & Divine Stories | Eternal Dharma</title>
-  <link rel="stylesheet" href="css/stories.css">
+  <title>Real Incidents &amp; Divine Stories | EternalDharma</title>
+  <meta name="description" content="Immerse in sacred recitals, miraculous encounters, and timeless stories of faith and devotion across Sanatan Dharma." />
+  
+  <!-- Google Fonts: Editorial Serif + Modern Clean Sans + Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=10.0">
+  <link rel="stylesheet" href="css/responsive.css?v=10.0">
+  <link rel="stylesheet" href="css/stories.css?v=10.0">
 </head>
 <body>
-<!-- 🕉️ NAVBAR -->
-  <header class="navbar">
-    
-    <div class="logo">
-      <a href="index.html" class="logo-link">
-      <svg class="brand-emblem-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="dharmaGoldGradStories" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#FCD34D" />
-            <stop offset="50%" stop-color="#F59E0B" />
-            <stop offset="100%" stop-color="#D95D1E" />
-          </linearGradient>
-        </defs>
-        <circle cx="24" cy="24" r="21" stroke="url(#dharmaGoldGradStories)" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
-        <circle cx="24" cy="24" r="16" stroke="url(#dharmaGoldGradStories)" stroke-width="1.4" />
-        <path d="M24 8 L24 40 M8 24 L40 24 M12.7 12.7 L35.3 35.3 M12.7 35.3 L35.3 12.7" stroke="url(#dharmaGoldGradStories)" stroke-width="1.2" stroke-linecap="round" opacity="0.65" />
-        <path d="M24 13 C21.5 17 19 20.5 19 24.5 C19 27.5 21.2 30 24 30 C26.8 30 29 27.5 29 24.5 C29 20.5 26.5 17 24 13 Z" fill="url(#dharmaGoldGradStories)" />
-        <circle cx="24" cy="24.5" r="2.2" fill="#FFFDF0" />
-      </svg>
-      <h1>EternalDharma</h1>
-    </a>
+
+  <!-- 🕉️ TOP NAVIGATION (Floating Glass Island) -->
+  <header class="navbar-wrapper" id="mainNavbar">
+    <div class="navbar-island">
+      <a href="index.html" class="brand-logo" aria-label="EternalDharma Homepage">
+        <svg class="brand-emblem-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="dharmaGoldGradStories" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FCD34D" />
+              <stop offset="50%" stop-color="#F59E0B" />
+              <stop offset="100%" stop-color="#D95D1E" />
+            </linearGradient>
+          </defs>
+          <circle cx="24" cy="24" r="21" stroke="url(#dharmaGoldGradStories)" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
+          <circle cx="24" cy="24" r="16" stroke="url(#dharmaGoldGradStories)" stroke-width="1.4" />
+          <path d="M24 8 L24 40 M8 24 L40 24 M12.7 12.7 L35.3 35.3 M12.7 35.3 L35.3 12.7" stroke="url(#dharmaGoldGradStories)" stroke-width="1.2" stroke-linecap="round" opacity="0.65" />
+          <path d="M24 13 C21.5 17 19 20.5 19 24.5 C19 27.5 21.2 30 24 30 C26.8 30 29 27.5 29 24.5 C29 20.5 26.5 17 24 13 Z" fill="url(#dharmaGoldGradStories)" />
+          <circle cx="24" cy="24.5" r="2.2" fill="#FFFDF0" />
+        </svg>
+        <span class="brand-title">EternalDharma</span>
+      </a>
+
+      <nav aria-label="Primary Navigation" class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html#discovery" class="nav-link">Explore</a></li>
+          <li><a href="sanatan.html" class="nav-link">Philosophy</a></li>
+          <li><a href="index.html#scriptures" class="nav-link">Scriptures</a></li>
+          <li><a href="stories.html" class="nav-link active">Stories</a></li>
+          <li><a href="temples.html" class="nav-link">Pilgrimage</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Atmospheric Mode Switcher -->
+        <button class="btn-atmosphere-toggle" id="btnAtmosphereToggle" title="Toggle Atmosphere (Suryodaya Dawn / Sandhya Night)" aria-label="Toggle Atmosphere Mode">
+          <span class="atmosphere-icon-wrap" id="atmosphereIcon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="atmosphere-svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+
+        <a href="index.html#inquiry" class="btn btn-primary btn-sm nav-cta-btn">Start Practice &rarr;</a>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#scriptures">Scriptures</a></li>
-        <li><a href="stories.html">Stories</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home Sanctuary</a></li>
+        <li><a href="sanatan.html" class="mobile-nav-link">Core Philosophy</a></li>
+        <li><a href="mahabharata.html" class="mobile-nav-link">The Mahabharata</a></li>
+        <li><a href="ramayana.html" class="mobile-nav-link">The Ramayana</a></li>
+        <li><a href="stories.html" class="mobile-nav-link active">Divine Audio Stories</a></li>
+        <li><a href="temples.html" class="mobile-nav-link">Sacred Temples</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
-  <header class="story-header">
-    <h1>🌺 Real Incidents & Divine Stories</h1>
-    <p>“Faith is not seen with the eyes — it is felt with the soul.”</p>
-  </header>
+  <main style="padding-top: 100px; padding-bottom: 60px;">
+    <header class="story-header container text-center" style="margin-bottom: 40px;">
+      <div class="hero-badge-row" style="justify-content: center; margin-bottom: 14px;">
+        <span class="pill-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          <span>Divine Recitals &amp; Miracles</span>
+        </span>
+      </div>
+      <h1 style="font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 2.75rem); color: var(--text-primary); margin-bottom: 12px;">
+        Real Incidents &amp; Divine Stories
+      </h1>
+      <p style="font-size: 1.0625rem; color: var(--text-secondary); font-style: italic; max-width: 620px; margin: 0 auto;">
+        “Faith is not seen with the eyes — it is felt with the soul.”
+      </p>
+    </header>
 
-  <section class="stories-grid">
-    <!-- Story Card 1 -->
-    <div class="story-card path-style" data-story="hanuman">
-      <img src="images/hanuman.png" alt="Hanuman" class="story-img"/>
-      <h2> Hanuman – The Mountain of Devotion</h2>
-      <p>When Lord Hanuman lifted the mountain to save Lakshman — a divine act of Bhakti.</p>
+    <div class="container">
+      <section class="stories-grid">
+        <!-- Story Card 1 -->
+        <div class="story-card path-style" data-story="hanuman">
+          <img src="images/hanuman.png" alt="Hanuman" class="story-img"/>
+          <h2>Hanuman – Mountain of Devotion</h2>
+          <p>When Lord Hanuman lifted the Himalayan mountain to deliver Sanjeevani — an immortal act of Bhakti Yoga.</p>
+        </div>
 
+        <!-- Story Card 2 -->
+        <div class="story-card path-style" data-story="tirupati">
+          <img src="images/temple-miracle.png" alt="Temple Miracle" class="story-img"/>
+          <h2>The Silent Devotee of Tirupati</h2>
+          <p>A devotee’s unspoken prayer receives an extraordinary divine response at Venkateswara shrine.</p>
+        </div>
+
+        <!-- Story Card 3 -->
+        <div class="story-card path-style" data-story="rishikesh">
+          <img src="images/sage.png" alt="Saint Experience" class="story-img"/>
+          <h2>The Saint of Rishikesh</h2>
+          <p>A saint’s peaceful surrender along the Himalayan riverbank reveals the path of inner realization.</p>
+        </div>
+
+        <!-- Story Card 4 -->
+        <div class="story-card path-style" data-story="kashi">
+          <img src="images/kashi.png" alt="Kashi Vishwanath" class="story-img">
+          <h2>The Miracle at Kashi Vishwanath</h2>
+          <p>The story of Bhavani Bai — whose pure heart devotion touched the heart of Lord Shiva Himself.</p>
+        </div>
+
+        <!-- Story Card 5 -->
+        <div class="story-card path-style" data-story="dwarka">
+          <img src="images/dwarka.png" alt="Lord Krishna Hidden Hand" class="story-img">
+          <h2>The Submerged City of Dwarka</h2>
+          <p>When archaeology met scripture — the Arabian sea revealed the lost kingdom of Krishna beneath its waves.</p>
+        </div>
+
+        <!-- Story Card 6 -->
+        <div class="story-card path-style" data-story="sai">
+          <img src="images/sai.png" alt="Shirdi Sai Baba" class="story-img">
+          <h2>Shirdi Sai Baba — Lamp Without Oil</h2>
+          <p>When water burned brighter than fire — an enduring lesson of unshakable faith and compassion.</p>
+        </div>
+
+        <!-- Story Card 7 -->
+        <div class="story-card path-style" data-story="shankara">
+          <img src="images/shankara.png" alt="Adi Shankaracharya" class="story-img">
+          <h2>Adi Shankaracharya — The Touch of Truth</h2>
+          <p>When saintly kindness revealed the non-dual Advaita truth of oneness in all beings.</p>
+        </div>
+
+        <!-- Story Card 8 -->
+        <div class="story-card path-style" data-story="meenakshi">
+          <img src="images/meenakshi.png" alt="Meenakshi Temple" class="story-img">
+          <h2>Meenakshi Temple — Light of Devotion</h2>
+          <p>When love replaced oil, and devotion lit every sacred lamp in Madurai’s holy corridors.</p>
+        </div>
+      </section>
     </div>
+  </main>
 
-    <!-- Story Card 2 -->
-    <div class="story-card path-style" data-story="tirupati">
-      <img src="images/temple-miracle.png" alt="Temple Miracle" class="story-img"/>
-      <h2>🛕 The Silent Prayer of Tirupati</h2>
-      <p>A devotee’s unspoken prayer reaches Lord Venkateswara in a miraculous way.</p>
-      
-    </div>
-
-    <!-- Story Card 3 -->
-    <div class="story-card path-style" data-story="rishikesh">
-      <img src="images/sage.png" alt="Saint Experience" class="story-img"/>
-      <h2>🧘‍♂️ The Saint of Rishikesh</h2>
-      <p>A saint’s peaceful surrender shows the path to divine unity.</p>
-    </div>
-   <!--Story Card 4-->
-    <div class="story-card path-style" data-story="kashi">
-      <img src="images/kashi.png" alt="Kashi Vishwanath" class="story-img">
-  <h2>🕉️ The Miracle at Kashi Vishwanath</h2>
-  <p>The story of Bhavani Bai — whose pure devotion touched the heart of Lord Shiva Himself.</p>
-</div>
-
-<!-- Story Card 5 -->
-<div class="story-card path-style" data-story="dwarka">
-  <img src="images/dwarka.png" alt="Lord Krishna Hidden Hand" class="story-img">
-  <h2>🌿 The Hidden Hand of Lord Krishna — Dwarka’s Submerged City</h2>
-  <p>When faith met science — the sea revealed the lost city of Dwarka beneath its waves.</p>
-</div>
-
-<!-- Story Card 6 -->
-<div class="story-card path-style" data-story="sai">
-  <img src="images/sai.png" alt="Shirdi Sai Baba" class="story-img">
-  <h2>🔥 Shirdi Sai Baba — The Lamp Without Oil</h2>
-  <p>When the divine made water burn brighter than fire — a lesson of unshakable faith.</p>
-</div>
-
-<!-- Story Card 7 -->
-<div class="story-card path-style" data-story="shankara">
-  <img src="images/shankara.png" alt="Adi Shankaracharya" class="story-img">
-  <h2>🌺 Adi Shankaracharya — The Miraculous Touch</h2>
-  <p>When compassion met divinity — a saint’s kindness revealed the true essence of Dharma.</p>
-</div>
-<!-- Story Card 8 -->
-<div class="story-card path-style" data-story="meenakshi">
-  <img src="images/meenakshi.png" alt="Meenakshi Temple" class="story-img">
-  <h2>🌕 Meenakshi Temple — The Light of Faith</h2>
-  <p>When love replaced ghee, and devotion lit every lamp in Madurai’s holy temple.</p>
-</div>
-
-<!-- 🕉️ Kailash Story Card -->
-<div class="story-card path-style" data-story="kailash">
-  <img src="images/kailash.png" alt="Mount Kailash" class="story-img" />
-  <h3>🕉️ The Sound of “Om” at Kailash</h3>
-  <p>
-    Pilgrims at Mount Kailash hear a divine vibration — the eternal sound of “Om,” the heartbeat of Lord Shiva Himself.
-  </p>
-</div>
-
-<!-- 🐍 Cobra & Sage – Tiruvannamalai -->
-<div class="story-card path-style" data-story="cobra">
-  <img src="images/cobra.png" alt="Cobra and the Sage" class="story-img" />
-  <h3>🐍 The Cobra and the Sage — Tiruvannamalai</h3>
-  <p>A cobra bows before a meditating sage — a divine test of purity at Arunachala Hill.</p>
-</div>
-
-<!-- 🌼 Ramanuja’s Divine Act — The Secret Mantra -->
-<div class="story-card path-style" data-story="ramanuja">
-  <img src="images/ramanuja.png" alt="Sri Ramanuja" class="story-img" />
-  <h3>🌼 Ramanuja’s Divine Act — The Secret Mantra</h3>
-  <p>The saint who chose to save the world instead of himself — a lesson in pure compassion.</p>
-</div>
-
-<!-- 🌊 Ganga’s Blessing — The Child Who Drowned -->
-<div class="story-card path-style" data-story="ganga">
-  <img src="images/ganga.png" alt="Maa Ganga Blessing" class="story-img" />
-  <h3>🌊 The Ganga’s Blessing — The Child Who Drowned</h3>
-  <p>The divine moment when Maa Ganga saved a child during Haridwar’s evening aarti.</p>
-</div>
-
-<!-- 🔱 Kedarnath Miracle – 2013 Flood -->
-<div class="story-card path-style" data-story="kedarnath">
-  <img src="images/kedarnath.png" alt="Kedarnath 2013 Miracle" class="story-img" />
-  <h3>🔱 Lord Shiva’s Promise — Kedarnath Flood, 2013</h3>
-  <p>The unbelievable moment when Bhim Shila protected Kedarnath Temple from destruction.</p>
-</div>
-
-<!-- 💫 Vrindavan Miracle – The Blind Girl Who Saw Krishna -->
-<div class="story-card path-style" data-story="vrindavan">
-  <img src="images/krishna.png" alt="Vrindavan Krishna Miracle" class="story-img" />
-  <h3>💫 The Girl Who Saw Krishna in Vrindavan</h3>
-  <p>A blind girl's heart witnesses what eyes cannot — the divine dance of Krishna.</p>
-</div>
-
-<!-- 🌹 Kamakhya Devi Miracle -->
-<div class="story-card path-style" data-story="kamakhya">
-  <img src="images/kamakhya.png" alt="Kamakhya Devi Miracle" class="story-img" />
-  <h3>🌹 The Miracle of Kamakhya Devi</h3>
-  <p>How the divine mother ended a deadly drought with her grace.</p>
-</div>
-
-  </section>
-
- 
-
- </div>
   <!-- 🌟 Popup Story Modal -->
   <div id="storyModal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
-        <div class="audio-controls">
-           
-
-  <button id="playBtn">▶️ Play</button>
-  <button id="pauseBtn">⏸ Pause</button>
-
-  <button id="toggleHindiBtn">Switch to Hindi</button>
-
-  <audio id="storyAudio"></audio>
-</div>
-
-
+      <div class="audio-controls">
+        <button id="playBtn" class="btn btn-primary btn-sm">▶ Play Narration</button>
+        <button id="pauseBtn" class="btn btn-secondary btn-sm">⏸ Pause</button>
+        <button id="toggleHindiBtn" class="btn btn-secondary btn-sm">Hindi / English</button>
+        <audio id="storyAudio"></audio>
+      </div>
       <div id="storyText"></div>
-
-    
     </div>
   </div>
 
-  <script src="js/stories.js"></script>
+  <!-- 🦶 SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-info">
+          <div class="brand-logo" style="margin-bottom: 8px;">
+            <svg class="brand-emblem-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="21" stroke="#D95D1E" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
+              <circle cx="24" cy="24" r="16" stroke="#D95D1E" stroke-width="1.4" />
+              <path d="M24 13 C21.5 17 19 20.5 19 24.5 C19 27.5 21.2 30 24 30 C26.8 30 29 27.5 29 24.5 C29 20.5 26.5 17 24 13 Z" fill="#D95D1E" />
+              <circle cx="24" cy="24.5" r="2.2" fill="#FFFDF0" />
+            </svg>
+            <span class="brand-title" style="color: #FFFFFF;">EternalDharma</span>
+          </div>
+          <p>A modern digital platform dedicated to preserving and sharing the timeless wisdom of Sanatan Dharma.</p>
+        </div>
 
-  <footer class="footer">
-    <p>© 2025 Eternal Dharma | Stories of Faith & Truth</p>
+        <div>
+          <h4 class="footer-heading">Sacred Scriptures</h4>
+          <ul class="footer-links-list">
+            <li><a href="ramayana.html" class="footer-link">The Ramayana (7 Kandas)</a></li>
+            <li><a href="mahabharata.html" class="footer-link">The Mahabharata (18 Parvas)</a></li>
+            <li><a href="sanatan.html" class="footer-link">Core Vedic Philosophy</a></li>
+            <li><a href="temples.html" class="footer-link">Sacred Pilgrimage Temples</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#inquiry" class="footer-link">Dilemma Mirror</a></li>
+            <li><a href="stories.html" class="footer-link">Divine Audio Stories</a></li>
+            <li><a href="about.html" class="footer-link">About the Mission</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 EternalDharma. Built with reverence and craft by Himanshu Srivastava.</span>
+        <span>ॐ शान्तिः शान्तिः शान्तिः</span>
+      </div>
+    </div>
   </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/stories.js" defer></script>
 </body>
 </html>

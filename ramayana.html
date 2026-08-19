@@ -1,25 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramayana | Eternal Dharma</title>
-  <link rel="stylesheet" href="css/ramayana.css" />
-  <link rel="icon" href="assets/icons/ram.svg" />
+  <title>The Ramayana (7 Kandas) — Sacred Scripture Reader | EternalDharma</title>
+  <meta name="description" content="Journey through the sacred 7 Kandas of Valmiki Ramayana — an epic of Maryada, courage, and unconditional devotion." />
+  
+  <!-- Google Fonts: Editorial Serif + Modern Clean Sans + Devanagari -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=10.0" />
+  <link rel="stylesheet" href="css/responsive.css?v=10.0" />
+  <link rel="stylesheet" href="css/ramayana.css?v=10.0" />
 </head>
 
 <body>
 
-  <header class="header">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
+  <!-- 🕉️ TOP NAVIGATION (Floating Glass Island) -->
+  <header class="navbar-wrapper" id="mainNavbar">
+    <div class="navbar-island">
+      <a href="index.html" class="brand-logo" aria-label="EternalDharma Homepage">
+        <svg class="brand-emblem-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="dharmaGoldGradRam" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FCD34D" />
+              <stop offset="50%" stop-color="#F59E0B" />
+              <stop offset="100%" stop-color="#D95D1E" />
+            </linearGradient>
+          </defs>
+          <circle cx="24" cy="24" r="21" stroke="url(#dharmaGoldGradRam)" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
+          <circle cx="24" cy="24" r="16" stroke="url(#dharmaGoldGradRam)" stroke-width="1.4" />
+          <path d="M24 8 L24 40 M8 24 L40 24 M12.7 12.7 L35.3 35.3 M12.7 35.3 L35.3 12.7" stroke="url(#dharmaGoldGradRam)" stroke-width="1.2" stroke-linecap="round" opacity="0.65" />
+          <path d="M24 13 C21.5 17 19 20.5 19 24.5 C19 27.5 21.2 30 24 30 C26.8 30 29 27.5 29 24.5 C29 20.5 26.5 17 24 13 Z" fill="url(#dharmaGoldGradRam)" />
+          <circle cx="24" cy="24.5" r="2.2" fill="#FFFDF0" />
+        </svg>
+        <span class="brand-title">EternalDharma</span>
+      </a>
 
-        <li><a href="index.html#contact">Feedback</a></li>
+      <nav aria-label="Primary Navigation" class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html#discovery" class="nav-link">Explore</a></li>
+          <li><a href="sanatan.html" class="nav-link">Philosophy</a></li>
+          <li><a href="index.html#scriptures" class="nav-link active">Scriptures</a></li>
+          <li><a href="stories.html" class="nav-link">Stories</a></li>
+          <li><a href="temples.html" class="nav-link">Pilgrimage</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Atmospheric Mode Switcher -->
+        <button class="btn-atmosphere-toggle" id="btnAtmosphereToggle" title="Toggle Atmosphere (Suryodaya Dawn / Sandhya Night)" aria-label="Toggle Atmosphere Mode">
+          <span class="atmosphere-icon-wrap" id="atmosphereIcon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="atmosphere-svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </button>
+
+        <a href="index.html#inquiry" class="btn btn-primary btn-sm nav-cta-btn">Start Practice &rarr;</a>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Mobile Navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-links">
+        <li><a href="index.html" class="mobile-nav-link">Home Sanctuary</a></li>
+        <li><a href="sanatan.html" class="mobile-nav-link">Core Philosophy</a></li>
+        <li><a href="mahabharata.html" class="mobile-nav-link">The Mahabharata</a></li>
+        <li><a href="ramayana.html" class="mobile-nav-link active">The Ramayana</a></li>
+        <li><a href="stories.html" class="mobile-nav-link">Divine Audio Stories</a></li>
+        <li><a href="temples.html" class="mobile-nav-link">Sacred Temples</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
 <div class="sidebar-toggle" onclick="toggleSidebar()">
@@ -1645,11 +1708,52 @@
 
     </main>
   </div>
-  <footer class="footer">
-    <p>© 2025 EternalDharma | Embrace the Eternal Path</p>
+
+  <!-- 🦶 SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-info">
+          <div class="brand-logo" style="margin-bottom: 8px;">
+            <svg class="brand-emblem-svg" width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="21" stroke="#D95D1E" stroke-width="1.8" stroke-dasharray="3 2" opacity="0.85" />
+              <circle cx="24" cy="24" r="16" stroke="#D95D1E" stroke-width="1.4" />
+              <path d="M24 13 C21.5 17 19 20.5 19 24.5 C19 27.5 21.2 30 24 30 C26.8 30 29 27.5 29 24.5 C29 20.5 26.5 17 24 13 Z" fill="#D95D1E" />
+              <circle cx="24" cy="24.5" r="2.2" fill="#FFFDF0" />
+            </svg>
+            <span class="brand-title" style="color: #FFFFFF;">EternalDharma</span>
+          </div>
+          <p>A modern digital platform dedicated to preserving and sharing the timeless wisdom of Sanatan Dharma.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Sacred Scriptures</h4>
+          <ul class="footer-links-list">
+            <li><a href="ramayana.html" class="footer-link">The Ramayana (7 Kandas)</a></li>
+            <li><a href="mahabharata.html" class="footer-link">The Mahabharata (18 Parvas)</a></li>
+            <li><a href="sanatan.html" class="footer-link">Core Vedic Philosophy</a></li>
+            <li><a href="temples.html" class="footer-link">Sacred Pilgrimage Temples</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#inquiry" class="footer-link">Dilemma Mirror</a></li>
+            <li><a href="stories.html" class="footer-link">Divine Audio Stories</a></li>
+            <li><a href="about.html" class="footer-link">About the Mission</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>&copy; 2026 EternalDharma. Built with reverence and craft by Himanshu Srivastava.</span>
+        <span>ॐ शान्तिः शान्तिः शान्तिः</span>
+      </div>
+    </div>
   </footer>
 
-  <script src="js/ramayana.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/ramayana.js" defer></script>
 </body>
-
 </html>

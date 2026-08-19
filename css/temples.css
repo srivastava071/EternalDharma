@@ -1,40 +1,174 @@
-/* Layout */
-body { font-family: Poppins, sans-serif; margin:0; background: linear-gradient(180deg,#fffdf5,#fff8e3); color:#2c1a04;}
-.page-header { padding: 18px 28px; display:flex; gap:20px; align-items:center; border-bottom:1px solid rgba(0,0,0,0.06);}
-.page-header h1 { font-size:1.25rem; margin:0; color:#1e3f7c; }
-.logo-link { color:#d17f05; text-decoration:none; font-weight:600; }
+/* ===================================================
+   🛕 Temple Locator Custom Styles | EternalDharma
+   Inherits design tokens from style.css
+   =================================================== */
 
-/* Main split layout */
-.tmpl-main { display:flex; gap:20px; padding: 20px; height: calc(100vh - 78px); box-sizing:border-box; }
-.tmpl-left { width:320px; background: #fff; border-radius:12px; padding:16px; box-shadow:0 6px 18px rgba(0,0,0,0.06); overflow:auto; }
-.tmpl-map-wrap { flex:1; border-radius:12px; overflow:hidden; box-shadow:0 6px 24px rgba(0,0,0,0.08); }
+.tmpl-main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 24px 60px;
+}
 
-/* Map */
-#map { width:100%; height:100%; min-height:520px; }
+.tmpl-layout-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  min-height: 580px;
+}
 
-/* Filters & Search */
-.tmpl-left label { display:block; margin-top:10px; font-weight:600; color:#6a4b2b; }
-#stateFilter, #searchBox { width:100%; padding:10px 12px; margin-top:6px; border-radius:8px; border:1px solid rgba(210,160,80,0.3); font-size:0.95rem; box-shadow:inset 0 1px 0 rgba(255,255,255,0.6); }
+.tmpl-sidebar-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+}
 
-/* Temple list */
-.temple-list { margin-top:12px; }
-.temple-item { display:flex; gap:12px; padding:10px; border-radius:8px; align-items:center; cursor:pointer; transition:all .18s ease; border:1px solid rgba(0,0,0,0.03); }
-.temple-item:hover { transform:translateY(-4px); box-shadow:0 10px 22px rgba(0,0,0,0.06); background: linear-gradient(90deg,#fffafd,#fff8e7); }
-.temple-thumb { width:64px; height:48px; object-fit:cover; border-radius:6px; flex-shrink:0; border:1px solid rgba(0,0,0,0.05); }
-.temple-meta { flex:1; }
-.temple-meta h4 { margin:0; font-size:1rem; color:#1e3f7c; }
-.temple-meta p { margin:4px 0 0; font-size:0.9rem; color:#6a4b2b; }
+.tmpl-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-saffron);
+  margin-bottom: 6px;
+}
+
+.tmpl-select,
+.tmpl-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface-warm);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: all var(--transition-fast);
+}
+
+.tmpl-select:focus,
+.tmpl-input:focus {
+  border-color: var(--accent-saffron);
+  background: var(--bg-surface);
+  box-shadow: 0 0 0 3px rgba(217, 93, 30, 0.15);
+}
+
+.temple-list-box {
+  margin-top: 16px;
+  overflow-y: auto;
+  max-height: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.temple-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  align-items: center;
+  cursor: pointer;
+  background: var(--bg-surface-warm);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.temple-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-gold);
+  background: rgba(217, 93, 30, 0.08);
+}
+
+.temple-thumb {
+  width: 56px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.temple-meta h4 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.temple-meta p {
+  margin: 3px 0 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Map Card */
+.tmpl-map-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  min-height: 520px;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+}
 
 /* Modal */
-.tmpl-modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.45); z-index:9999; }
-.tmpl-modal[aria-hidden="false"]{ display:flex; }
-.tmpl-modal-content { background:#fff; width:92%; max-width:780px; padding:22px; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.3); position:relative; }
-.tmpl-close { position:absolute; top:12px; right:12px; background:#f1a208; color:#fff; border:none; padding:8px 10px; border-radius:8px; cursor:pointer; font-weight:700; }
-.tmpl-close:hover { background:#ffcc33; color:#2e1a06; }
+.tmpl-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 10, 14, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+}
 
-/* Responsive */
-@media (max-width:900px){
-  .tmpl-main { flex-direction:column; height:auto; padding:12px; }
-  .tmpl-left { width:100%; order:2; }
-  .tmpl-map-wrap { order:1; min-height:420px; }
+.tmpl-modal[aria-hidden="false"] {
+  display: flex;
+}
+
+.tmpl-modal-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  width: 92%;
+  max-width: 640px;
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-modal);
+  position: relative;
+}
+
+.tmpl-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--accent-saffron);
+  color: #FFFFFF;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Dark Theme */
+body.theme-sandhya .tmpl-sidebar-card,
+body.theme-sandhya .tmpl-map-card,
+body.theme-sandhya .tmpl-modal-content {
+  background: #18131E;
+  border-color: rgba(248, 177, 121, 0.2);
+}
+
+@media (max-width: 900px) {
+  .tmpl-layout-grid {
+    grid-template-columns: 1fr;
+  }
 }

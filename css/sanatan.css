@@ -1,342 +1,123 @@
-/* 🌼 GENERAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+/* ===================================================
+   🕉️ Sanatan Dharma Philosophy Custom Styles
+   Inherits design tokens from style.css
+   =================================================== */
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #fffaf0;
-  color: #2e1a06;
-  overflow-x: hidden;
-}
-
-/* 🔱 NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(90deg, #f2a03d, #e67e22);
-  padding: 10px 60px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.navbar .logo {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .logo img {
-  width: 60px;
-  margin-right: 1px;
-  margin-left: -40px;
-}
-
-.navbar h1 {
-  color: #fff;
-  font-weight: 450;
-  letter-spacing: 1px;
-  font-size: 30px;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.navbar a:hover {
-  color: #2e1a06;
-}
-
-/* 🕉️ HERO SECTION */
 .sanatan-hero {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('../assets/images/sanatan-bg.jpg') center/cover no-repeat;
-  color: #fff;
+  background: linear-gradient(135deg, rgba(20, 15, 10, 0.88), rgba(30, 20, 12, 0.94)),
+              url('../images/pexels-felix-mittermeier-956981.jpg') center/cover no-repeat;
+  color: #FFFFFF;
   text-align: center;
-  padding: 150px 30px;
-}
-
-.sanatan-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
-.sanatan-hero .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: auto;
+  padding: 80px 24px;
+  border-radius: var(--radius-xl);
+  max-width: 1140px;
+  margin: 0 auto 50px;
+  box-shadow: var(--shadow-elevated);
 }
 
 .sanatan-hero h2 {
-  font-size: 2.6rem;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  color: #ffcc70;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+  color: var(--accent-gold);
 }
 
 .sanatan-hero p {
-  font-size: 1.2rem;
-  color: #f7e9c4;
+  font-size: 1.125rem;
+  color: #F5EADB;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* 📖 SECTION CONTAINER */
+/* Section Cards */
 .sanatan-section {
-  background: #fffdf8;
-  max-width: 950px;
-  margin: 70px auto;
-  padding: 70px 60px;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  padding: 44px 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .sanatan-section:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .sanatan-section h2 {
-  color: #c06a00;
-  font-size: 2rem;
+  font-family: var(--font-serif);
+  color: var(--accent-saffron);
+  font-size: 1.85rem;
   text-align: center;
-  margin-bottom: 30px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  margin-bottom: 24px;
 }
 
 .sanatan-section p {
-  color: #3b2405;
-  font-size: 1.1rem;
-  text-align: justify;
-  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  margin-bottom: 18px;
 }
 
 .sanatan-section ul {
-  margin: 15px 0 0 20px;
-  padding-left: 10px;
+  margin: 15px 0 20px 24px;
 }
 
 .sanatan-section li {
-  margin-bottom: 12px;
-  font-size: 1.05rem;
-}
-
-/* 🌸 BLOCKQUOTE */
-blockquote {
-  background: #fff4d6;
-  border-left: 5px solid #f0a500;
-  padding: 20px 30px;
-  margin-top: 20px;
-  font-style: italic;
-  font-size: 1.05rem;
-  border-radius: 8px;
-  color: #5a3b10;
+  color: var(--text-secondary);
+  font-size: 1rem;
   line-height: 1.7;
+  margin-bottom: 10px;
 }
 
-/* 📜 TEXT SECTIONS */
-.texts-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 25px;
+.sanatan-section blockquote {
+  border-left: 3px solid var(--accent-saffron);
+  background: var(--bg-surface-warm);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--text-primary);
 }
 
-.text-card {
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  width: 400px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.text-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
-
-.text-card h3 {
-  color: #b56200;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-  text-align: center;
-}
-
-/* 🌼 PRINCIPLE LIST */
-.principle-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.principle-list li {
-  font-size: 1.1rem;
-  padding: 10px 0;
-  border-bottom: 1px dashed #e0c193;
-  width: 100%;
-}
-
-/* 🧘‍♂️ PATHS GRID */
-.paths-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.path-card {
-  background: #fff8e7;
-  padding: 25px;
-  text-align: center;
-  border-radius: 15px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  font-size: 1.05rem;
-  transition: all 0.3s ease;
-}
-
-.path-card:hover {
-  background: #ffe8b3;
-  transform: scale(1.05);
-}
-
-/* 🔱 DEITIES GRID */
-.deity-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.deity-card {
-  width: 270px;
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  padding: 20px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.deity-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.2);
-}
-
-.deity-card img {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.deity-card h3 {
-  color: #c06a00;
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-}
-.deity-container p{
-    margin-top: 20px;
-    text-align: center;
-}
-
-/* 🌺 ULTIMATE MESSAGE */
-.ultimate blockquote {
-  background: #fff3d9;
-  border: none;
-  padding: 35px 25px;
-  font-size: 1.25rem;
-  text-align: center;
-  border-radius: 20px;
-  color: #573406;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-/* ✨ FADE-IN ANIMATION */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.9s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 📱 RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .sanatan-section {
-    padding: 50px 25px;
-  }
-
-  .sanatan-hero h2 {
-    font-size: 2rem;
-  }
-
-  .text-card {
-    width: 100%;
-  }
-
-  .deity-card {
-    width: 90%;
-  }
-
-  .paths-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 🌐 Language Toggle Button */
+/* Translate Button */
 .translate-btn {
-  margin-top: 25px;
-  background: #f1a208;
-  color: #fff;
-  border: none;
-  padding: 10px 22px;
-  border-radius: 25px;
-  cursor: pointer;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--accent-saffron);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
   font-weight: 600;
-  transition: 0.3s ease;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+  transition: all var(--transition-fast);
 }
 
 .translate-btn:hover {
-  background: #ffcc33;
-  color: #2e1a06;
-  box-shadow: 0 0 12px rgba(255, 204, 51, 0.6);
+  background: var(--accent-saffron);
+  color: #FFFFFF;
+  border-color: var(--accent-saffron);
 }
 
-/* Hide Hindi by default */
-.lang-hi {
-  display: none;
+/* Dark Theme */
+body.theme-sandhya .sanatan-section {
+  background: rgba(24, 19, 30, 0.75);
+  border-color: rgba(248, 177, 121, 0.2);
 }
 
-.lang-content {
-  transition: opacity 0.4s ease;
+body.theme-sandhya .sanatan-section blockquote {
+  background: rgba(217, 93, 30, 0.12);
+}
+
+@media (max-width: 768px) {
+  .sanatan-section {
+    padding: 28px 20px;
+    margin-bottom: 24px;
+  }
 }

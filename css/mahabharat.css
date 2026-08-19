@@ -11,11 +11,12 @@ body {
 }
 .mahabharat-container {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
   background: linear-gradient(180deg, #0e0802 0%, #201306 100%);
   color: #fef9e7;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden; /* prevent double scrollbars */
+  font-family: var(--font-sans), sans-serif;
+  overflow: hidden;
   position: relative;
 }
 /* 🌺 HEADER */
